@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<TEI xml:id="105_final-STEYER_Timo_Abstract_Enhancement__Potentiale_der_Dhd_Konfere">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="final-STEYER_Timo_Abstract_Enhancement__Potentiale_der_Dhd_Konfere_105">
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Abstract Enhancement. Potentiale der DHd-Konferenzabstracts als Daten/Publikation</title>
+                <title xml:lang="de">Abstract Enhancement. Potentiale der DHd-Konferenzabstracts als Daten/Publikation</title>
                 <author>
                     <persName>
                         <surname>Steyer</surname>
@@ -62,7 +62,7 @@
             </textClass>
         </profileDesc>
     </teiHeader>
-    <text>
+    <text xml:lang="de">
         <body>
             <div type="div1">
                 <head>Das Abstract im Kontext</head>
