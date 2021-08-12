@@ -3,7 +3,7 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Abstract Enhancement. Potentiale der DHd-Konferenzabstracts als Daten/Publikation</title>
+                <title xml:lang="de">Abstract Enhancement. Potentiale der DHd-Konferenzabstracts als Daten/Publikation</title>
                 <author>
                     <persName>
                         <surname>Steyer</surname>
@@ -62,7 +62,7 @@
             </textClass>
         </profileDesc>
     </teiHeader>
-    <text>
+    <text xml:lang="de">
         <body>
             <div type="div1">
                 <head>Das Abstract im Kontext</head>
