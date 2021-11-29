@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/2.0"
+     xml:id="dhd_109_final-WEHRHEIM_Lino_Von_Wirtschaftsweisen_und_Topic_Models__50_Jah">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title xml:lang="de">Von Wirtschaftsweisen und Topic Models: 50 Jahre ökonomische Expertise aus einer Text Mining Perspektive</title>
+            <author>
+               <persName>
+                  <surname>Wehrheim</surname>
+                  <forename>Lino</forename>
+               </persName>
+               <affiliation>
+                  <orgName>
+                     <name type="main">Universität Regensburg</name>
+                  </orgName>
+                  <country>Deutschland</country>
+               </affiliation>
+            </author>
+         </titleStmt>
+      </fileDesc>
+      <profileDesc>
+         <textClass>
+            <keywords n="category">
+               <term>Vortrag</term>
+            </keywords>
+            <keywords n="keywords">
+               <term>Topic Models</term>
+               <term>ökonomische Experten</term>
+               <term>Wirtschaftsgeschichte</term>
+            </keywords>
+            <keywords n="topics">
+               <term>Inhaltsanalyse</term>
+               <term>Modellierung</term>
+               <term>Theoretisierung</term>
+               <term>Daten</term>
+               <term>Text</term>
+            </keywords>
+         </textClass>
+      </profileDesc>
+   </teiHeader>
+   <text xml:lang="de">
+      <body>
+         <div type="div1" rend="DH-Heading1">
+            <head>Text Mining für historische Fragestellungen</head>
+            <p style="text-align:left; ">Aufgrund der zunehmenden Verfügbarkeit digitaler Textsammlungen kommt Methoden des Text Mining 
+                    
+                    <anchor id="CTVP001a8459e5f78d64e9ba4a2206f5d6e17c1"/>(Heyer 2009) auch für zeit- und wirtschaftshistorische Fragestellungen eine immer größere Bedeutung zu. Der Beitrag geht der Frage nach, ob und wie ein spezifischer Ansatz, die automatisierte Inhaltsanalyse mittels Topic Modelling 
+                    
+                    <anchor id="CTVP001a3d22a1cacb4458bab552bd9c10df96e"/>(Blei 2012), für die Untersuchung eines wirtschaftshistorisch bedeutsamen Korpus eingesetzt werden kann: der Jahresgutachten des Sachverständigenrats zur Begutachtung der gesamtwirtschaftlichen Entwicklung (SVR), eines der prominentesten Gremien in der ökonomischen Politikberatung. Ihr erstes Jahresgutachten veröffentlichten die „Wirtschaftsweisen“ 1964, seither hat sich ein beachtliches Korpus angesammelt, dessen Umfang für Untersuchungen mit einer zeitlich oder thematisch begrenzten Fragestellung zwar ein weniger großes Hindernis darstellt 
+                    
+                    <anchor id="CTVP0019ad571200579451496237542226d74c7"/>(Schanetzky 2007; Strätling 2001); wird jedoch eine diachrone Fragestellung verfolgt, bieten Topic Models einen vielversprechenden Ansatz. Diese haben in den vergangenen Jahren in verschiedensten Wissenschaftsbereichen Anwendung gefunden 
+                    
+                    <anchor id="CTVP0016dcf434361804ee486ca6abfcee5320e"/>(Boyd-Graber et al. 2017; Wehrheim 2018), wobei ihre Popularität maßgeblich auf das von 
+                    
+                    <anchor id="CTVP0018db5806d905a4e72b2bf479c15b4a678"/>Blei et al. 
+                    
+                    <anchor id="CTVP001a37b48f7421847c1ace9157b19dab9de"/>(2003) eingeführte Model der 
+                    <hi rend="italic" space="preserve">Latent-Dirichlet-Allocation </hi>(LDA) zurückzuführen ist.
+                </p>
+         </div>
+         <div type="div1" rend="DH-Heading1">
+            <head>Korpus, Vorverarbeitung und Modellerstellung</head>
+            <p style="text-align:left; ">Das untersuchte Korpus besteht aus den zwischen 1965 und 2015 veröffentlichten Publikationen des SVR, d.h. 51 Jahresgutachten, 23 Sondergutachten und 7 
+                Expertisen.<ref target="ftn1" n="1"/> Hinzu kommen die seit 1968 veröffentlichten Jahreswirtschaftsberichte, in denen die Bundesregierung ihre Sicht der Wirtschaftslage erörtert und zum Jahresgutachten Stellung bezieht und die ein naheliegendes Vergleichskorpus bilden. Die Texte wurden über die Parlamentsdokumentation des Deutschen Bundestags 
+                bezogen.<ref target="ftn2" n="2"/> Die dort bereitgestellten OCR-Scans weisen eine sehr hohe Textqualität auf. Längere Dokumente wurden anhand der jeweiligen Gliederung in Einzelkapitel geteilt 
+                    
+                    <anchor id="CTVP0014761248844bf451fab2a8a58dddabbdd"/>(Jockers 2013). Dabei sollten möglichst gleich lange Texte entstehen und diese möglichst einheitliche Themenbereiche enthalten. Daher wurden Texte teilweise erneut auf einer tiefer liegenden Gliederungsebene geteilt. Daraus resultierte ein Korpus aus 1.150 Dokumenten mit einem Textumfang von 8,3 Millionen Wörtern (Vorworte, Inhalts- und Literaturverzeichnisse sowie Anhänge wurden entfernt). Dieses Vorgehen besitzt den Vorteil, dass so thematisch homogenere Texte entstehen, welche wiederum abgrenzbare, spezifische Topics produzieren. Für die Auswertung wurden anschließend die Topic-Anteile der einzelnen Teil-Dokumente aggregiert, indem der Mittelwert über alle Teile des jeweiligen Dokuments gebildet wurde, was die Ergebnisse zwar anfällig für statistische Ausreißer macht, aber eine sich jeweils zu eins addierende Topic-Verteilung ergibt, was für spätere Anwendungen notwendig ist.
+                </p>
+            <p style="text-align:left; ">Das Korpus wurde um häufig auftretende Wörter (Stopwörter) bereinigt 
+                    
+                    <anchor id="CTVP0014fff073d60ea4b559bac9f890c737dca"/>(Boyd-Graber et al. 2015). Das Topic Model wurde mit 
+                    MALLET<ref target="ftn3" n="3"/> erstellt (2.000 Iterationen, Optimierung alle 20 Iterationen) und die dort integrierte Stopliste genutzt. Zudem wurden alle Wörter mit einer absoluten Häufigkeit größer-gleich 1.000 entfernt, wobei nach manueller Durchsicht bestimmte bedeutungstragende Begriffe davon ausgenommen wurden. Die Stopliste wurde nach einem ersten Testlauf um weitere häufig auftretende Wörter ergänzt. Zudem wurden aus Kompatibilitätsgründen Umlaute und Eszett entfernt. Die optimale Anzahl an Topics wurde zunächst mittels der R-Erweiterung 
+                    <hi rend="italic">ldatuning</hi> von 
+                    
+                    <anchor id="CTVP001aae18ea69e314e0e97fc287120c2db7d"/>Murzintcev 
+                    
+                    <anchor id="CTVP0015169f54906be4b2b818d27d4fae3d0d6"/>(2016) geschätzt, allerdings lieferte der daraus resultierende Wert von etwa 30 nur sehr unspezifische Topics. Daher wurde die Topic-Anzahl sukzessive erhöht und schließlich ein Wert von 70 festgelegt, welcher einen Kompromiss zwischen Spezifität und Redundanz der Topics darstellt.
+                </p>
+         </div>
+         <div type="div1" rend="DH-Heading1">
+            <head>Ergebnisse</head>
+            <p style="text-align:left; ">Die meisten der 70 Topics können unmittelbar als kohärente ökonomische Themen interpretiert 
+                werden.<ref target="ftn4" n="4"/> Da einige Topics unterschiedliche Teilaspekte eines Oberthemas betreffen, wurden diese zu „Obertopics“ zusammengefasst, indem die entsprechenden Topic-Anteile addiert wurden. Als Kriterium wurde ihre begriffliche Ähnlichkeit, ausgedrückt in der Kosinus-Ähnlichkeit 
+                    
+                    <anchor id="CTVP001d522038027db4c3c96fec11ff82424c7"/>(Aletras und Stevenson 2014; Wiedemann 2016), herangezogen, wobei auch Topics gruppiert wurden, die zwar nur eine geringe Ähnlichkeit, dafür aber eine hohe inhaltliche Übereinstimmung aufwiesen. Damit reduzierte sich die Topic-Anzahl auf 10 Obertopics, von denen 8 große ökonomische Themenbereiche umfassen, sowie 12 Einzeltopics 
+                    (Tabelle 1).<ref target="ftn5" n="5"/>
+            </p>
+            <table rend="rules">
+               <row>
+                  <cell rend="left">
+                     <hi style="font-size:9pt">Obertopic</hi>
+                  </cell>
+                  <cell rend="center">Nr. der einbezogenen Topics</cell>
+                  <cell rend="center">
+                     <hi style="font-size:9pt">Token-
+                                <lb/>Anteil
+                            </hi>
+                  </cell>
+                  <cell rend="left"/>
+                  <cell rend="left">Einzeltopics (Topic-Nr.)</cell>
+                  <cell rend="center">Token-Anteil</cell>
+               </row>
+               <row>
+                  <cell rend="left">Allgemein- sprache</cell>
+                  <cell rend="right">06, 09, 11, 26, 29, 44</cell>
+                  <cell rend="right">
+                     <hi style="font-size:9pt">25,08%</hi>
+                  </cell>
+                  <cell rend="left"/>
+                  <cell rend="left">
+                     <hi style="font-size:9pt">Europa (58)</hi>
+                  </cell>
+                  <cell rend="right">
+                     <hi style="font-size:9pt">0,87%</hi>
+                  </cell>
+               </row>
+               <row>
+                  <cell rend="left">Arbeitsmarkt</cell>
+                  <cell rend="right">08, 13, 20, 21, 24, 53, 40, 57</cell>
+                  <cell rend="right">
+                     <hi style="font-size:9pt">9,59</hi>
+                  </cell>
+                  <cell rend="left"/>
+                  <cell rend="left">Methodik (10)</cell>
+                  <cell rend="right">
+                     <hi style="font-size:9pt">0,78</hi>
+                  </cell>
+               </row>
+               <row>
+                  <cell rend="left">Finanz- und Eurokrise</cell>
+                  <cell rend="right">03, 19, 27, 41, 69</cell>
+                  <cell rend="right">
+                     <hi style="font-size:9pt">4,71</hi>
+                  </cell>
+                  <cell rend="left"/>
+                  <cell rend="left">Wettbewerb (14)</cell>
+                  <cell rend="right">
+                     <hi style="font-size:9pt">0,76</hi>
+                  </cell>
+               </row>
+               <row>
+                  <cell rend="left">Geldpolitik</cell>
+                  <cell rend="right">05, 23, 46, 48, 50, 54, 63, 66, 67</cell>
+                  <cell rend="right">
+                     <hi style="font-size:9pt">10,09</hi>
+                  </cell>
+                  <cell rend="left"/>
+                  <cell rend="left">
+                     <hi style="font-size:9pt">Expertise Demographie (38)</hi>
+                  </cell>
+                  <cell rend="right">
+                     <hi style="font-size:9pt">0,70</hi>
+                  </cell>
+               </row>
+               <row>
+                  <cell rend="left">Öffentliche Finanzen</cell>
+                  <cell rend="right">01, 15, 31, 32, 35, 42, 52, 60, 64, 68</cell>
+                  <cell rend="right">
+                     <hi style="font-size:9pt">12,54</hi>
+                  </cell>
+                  <cell rend="left"/>
+                  <cell rend="left">
+                     <hi style="font-size:9pt">Agrarpolitik (12)</hi>
+                  </cell>
+                  <cell rend="right">
+                     <hi style="font-size:9pt">0,62</hi>
+                  </cell>
+               </row>
+               <row>
+                  <cell rend="left">Ost-/Westdeutschland</cell>
+                  <cell rend="right">07, 18, 37</cell>
+                  <cell rend="right">
+                     <hi style="font-size:9pt">3,38</hi>
+                  </cell>
+                  <cell rend="left"/>
+                  <cell rend="left">
+                     <hi style="font-size:9pt">Erneuerbare Energien (45)</hi>
+                  </cell>
+                  <cell rend="right">
+                     <hi style="font-size:9pt">0,56</hi>
+                  </cell>
+               </row>
+               <row>
+                  <cell rend="left">Soziale Sicherung</cell>
+                  <cell rend="right">00, 22, 39, 65</cell>
+                  <cell rend="right">
+                     <hi style="font-size:9pt">3,83</hi>
+                  </cell>
+                  <cell rend="left"/>
+                  <cell rend="left">
+                     <hi style="font-size:9pt">Produktivität &amp; Innovation (49)</hi>
+                  </cell>
+                  <cell rend="right">
+                     <hi style="font-size:9pt">0,54</hi>
+                  </cell>
+               </row>
+               <row>
+                  <cell rend="left">Verteilung</cell>
+                  <cell rend="right">30, 47</cell>
+                  <cell rend="right">
+                     <hi style="font-size:9pt">1,77</hi>
+                  </cell>
+                  <cell rend="left"/>
+                  <cell rend="left">
+                     <hi style="font-size:9pt">Energie- versorgung (16)</hi>
+                  </cell>
+                  <cell rend="right">
+                     <hi style="font-size:9pt">0,52</hi>
+                  </cell>
+               </row>
+               <row>
+                  <cell rend="left">Weltwirtschaft</cell>
+                  <cell rend="right">28, 33, 43, 55, 59, 62</cell>
+                  <cell rend="right">
+                     <hi style="font-size:9pt">9,34</hi>
+                  </cell>
+                  <cell rend="left"/>
+                  <cell rend="left">
+                     <hi style="font-size:9pt">Expertise Lebensqualität (04)</hi>
+                  </cell>
+                  <cell rend="right">
+                     <hi style="font-size:9pt">0,47</hi>
+                  </cell>
+               </row>
+               <row>
+                  <cell rend="left">Wirtschafts- entwicklung</cell>
+                  <cell rend="right">02, 17, 25, 36, 56</cell>
+                  <cell rend="right">
+                     <hi style="font-size:9pt">12,63</hi>
+                  </cell>
+                  <cell rend="left"/>
+                  <cell rend="left">
+                     <hi style="font-size:9pt">Strukturwandel (51)</hi>
+                  </cell>
+                  <cell rend="right">
+                     <hi style="font-size:9pt">0,45</hi>
+                  </cell>
+               </row>
+               <row>
+                  <cell rend="left"/>
+                  <cell rend="right"/>
+                  <cell rend="right"/>
+                  <cell rend="left"/>
+                  <cell rend="left">Immobilien- markt (61)</cell>
+                  <cell rend="right">
+                     <hi style="font-size:9pt">0,39</hi>
+                  </cell>
+               </row>
+               <row>
+                  <cell rend="left"/>
+                  <cell rend="left"/>
+                  <cell rend="right"/>
+                  <cell rend="left"/>
+                  <cell rend="left">
+                     <hi style="font-size:9pt">Bildung (34)</hi>
+                  </cell>
+                  <cell rend="right">
+                     <hi style="font-size:9pt">0,38</hi>
+                  </cell>
+               </row>
+               <row>
+                  <cell rend="left">Summe</cell>
+                  <cell rend="right"/>
+                  <cell rend="right">92,96</cell>
+                  <cell rend="right"/>
+                  <cell rend="right"/>
+                  <cell rend="right">7,04</cell>
+               </row>
+            </table>
+            <p>Tabelle 1: Topics der Jahresgutachten</p>
+            <p style="text-align:left; ">
+               <anchor id="Hlk525069901"/>Die Topic-Verteilungen können für einige grundsätzliche Aussagen über das Korpus herangezogen werden. Zum Vergleich des Inhalts zweier Dokumente wird in der Literatur die Jensen-Shannon-Divergenz (JSD) herangezogen, welche die Differenz der Topic-Verteilungen misst 
+                    
+                    <anchor id="CTVP001ab22bc81b5274c838741f440bba02270"/>(Steyvers und Griffiths 2007). Abbildung 1 zeigt die thematische Divergenz zwischen einem Jahresgutachten und dem jeweiligen Vorjahresgutachten. Die JSD ist mit durchschnittlich 0,37 gering (maximale Divergenz besteht bei JSD=1), die Jahresgutachten weisen also eine hohe thematische Kontinuität auf. Allerdings ergeben sich einige thematische Brüche, wie etwa durch die Wiedervereinigung im Jahresgutachten 1990 oder die Finanzkrise im Jahresgutachten 2009. Die thematische Vielfalt lässt sich mittels eines in der Ökonomik genutzten Maßes zur Messung der Konzentration der Marktmacht von Unternehmen abbilden: dem Herfindahl-Hirschman-Index (HHI). Dieser ist definiert als die Summe der quadrierten Marktanteile aller Unternehmen, welche sich mit den Topic-Anteilen eines Dokuments vergleichen lassen. Somit kann auf Basis der Topic-Anteile eines Jahresgutachtens dessen „thematische Konzentration“ ermittelt werden. Wie anhand von Abbildung 1 deutlich wird, weisen die Jahresgutachten eine schwache und zudem abnehmende thematische Konzentration auf (maximale Konzentration, d.h. ein Monopol, besteht bei HHI=1).
+                </p>
+            <figure>
+               <graphic n="1001"
+                        width="11.008430555555556cm"
+                        height="6.993819444444444cm"
+                        url="109_final-ca0a3605cc000dd34cdc09f608f7af7c.png"
+                        rend="inline"/>
+               <head>
+                  <lb/>Abbildung 1. Topic-Divergenz und -Konzentration der Jahresgutachten
+                    </head>
+            </figure>
+            <p style="text-align:left; ">Dass die Gutachten nur eine geringe jährliche Themenveränderung aufweisen, erscheint angesichts der institutionellen und personellen Kontinuitäten des Rates durchaus plausibel 
+                    
+                    <anchor id="CTVP001141e83a69bec4207a8171dda5179ee2d"/>(Schanetzky 2007). Nichtsdestotrotz stellt sich die Frage, ob und inwieweit nicht zumindest ein längerfristiger, eher gradueller Wandel zu beobachten ist. Um einen solchen zu bestimmen, wurden die Jahresgutachten analog zur Vorgehensweise bei 
+                    
+                    <anchor id="CTVP00165cf0ebe83634865afb34acacc875ee5"/>Wiedemann 
+                    
+                    <anchor id="CTVP001859a39a031134c3fad7f51a794ca0fbe"/>(2016) auf Basis der Topic-Verteilungen in Cluster eingeteilt, wobei sich die in Abbildung 2 dargestellten sechs Cluster ergaben. Im zweiten Schritt wurden die durchschnittliche Topic-Verteilung für jedes Cluster berechnet.
+                </p>
+            <table rend="rules">
+               <row>
+                  <cell rend="center"/>
+                  <cell rend="center">
+                     <hi style="font-size:9pt">Cluster/
+                                <lb/>Periode
+                            </hi>
+                  </cell>
+                  <cell rend="center">Token</cell>
+               </row>
+               <row>
+                  <cell rend="center">1.</cell>
+                  <cell rend="center">1965-1974</cell>
+                  <cell rend="right">665.068</cell>
+               </row>
+               <row>
+                  <cell rend="center">2.</cell>
+                  <cell rend="center">1975-1989</cell>
+                  <cell rend="right">1.685.157</cell>
+               </row>
+               <row>
+                  <cell rend="center">3.</cell>
+                  <cell rend="center">
+                     <hi style="font-size:9pt">1990-1999</hi>
+                  </cell>
+                  <cell rend="right">1.471.786</cell>
+               </row>
+               <row>
+                  <cell rend="center">4.</cell>
+                  <cell rend="center">
+                     <hi style="font-size:9pt">2000-2007</hi>
+                  </cell>
+                  <cell rend="right">1.610.708</cell>
+               </row>
+               <row>
+                  <cell rend="center">5.</cell>
+                  <cell rend="center">
+                     <hi style="font-size:9pt">2008-2013</hi>
+                  </cell>
+                  <cell rend="right">820.253</cell>
+               </row>
+               <row>
+                  <cell rend="center">6.</cell>
+                  <cell rend="center">
+                     <hi style="font-size:9pt">2014-2015</hi>
+                  </cell>
+                  <cell rend="right">271.820</cell>
+               </row>
+            </table>
+            <figure>
+               <graphic n="1002"
+                        rend="inline"
+                        url="109_final-83255ff2de11c5f1aecb45e7e31b43da.png"
+                        height="6.554611111111111cm"
+                        width="9.941277777777778cm"/>
+            </figure>
+            <figure>
+               <graphic n="1003"
+                        width="16.07079166666667cm"
+                        height="6.536972222222222cm"
+                        url="109_final-edaa0713157c070f0dcb5762b535959c.png"
+                        rend="inline"/>
+               <head>
+                  <lb/>Abbildung 2: Topic-Verteilungen der Jahresgutachten nach Topic-Clustern
+                        Quelle: eigene Darstellung in Anlehnung an 
+                            
+                            <anchor id="CTVP00177f3ec9cad6047bd81a61e6f16841d0d"/>Wiedemann 
+                            
+                            <anchor id="CTVP0014f9e1879a8c241718f5dac40cc2e391f"/>(2016).
+                    </head>
+            </figure>
+            <p style="text-align:left; ">Zur Illustration seien drei Obertopics herausgegriffen. Die Entwicklung des Obertopics 
+                    <hi rend="italic" space="preserve">Arbeitsmarkt </hi>weist einen positiven Trend und eine hohe Korrelation mit der Entwicklung der Arbeitslosenquote auf (Korrelationskoeffizient: 0,6), besonders bis zu Beginn der 1990er Jahre. In anderen Worten korreliert der Umfang, in dem der SVR über das Thema Arbeitsmarkt schrieb, positiv mit der tatsächlichen Entwicklung auf dem Arbeitsmarkt. Der Ausschlag des Jahresgutachten 1977 erklärt sich mit einer ausführlichen Diskussion der Ursachen der Arbeitslosigkeit, vor allem mit einem hohen Anteil von Topic 40. Dieses enthält viele mit einer angebotsorientierten Erklärung von 
+                    Arbeitslosigkeit<ref target="ftn6" n="6"/> verbundene Begriffe wie „Investition“, „Kostenniveau“ oder „rentabel“.
+                </p>
+            <figure>
+               <graphic n="1004"
+                        width="6.842125cm"
+                        height="5.706180555555555cm"
+                        url="109_final-fdf19132b6de536dbfbbf01fae96b470.png"
+                        rend="inline"/>
+            </figure>
+            <figure>
+               <graphic n="1005"
+                        width="9.059333333333333cm"
+                        height="6.469944444444445cm"
+                        url="109_final-431063fa5f0c1bb88677c0fa8d5623ac.png"
+                        rend="inline"/>
+               <head>
+                  <lb/>Abbildung 3: Obertopic Arbeitsmarkt Anmerkungen: Arbeitslosenquote bis 1991 früheres Bundesgebiet. Quelle: eigene Darstellung, Bundesagentur für Arbeit.
+                    </head>
+            </figure>
+            <p style="text-align:left; ">Auch das Obertopic 
+                    <hi rend="italic" space="preserve">Geldpolitik </hi>weist mit seinem fallenden Trend einen der entsprechenden ökonomischen Variablen, der Inflationsrate, ähnelnden Verlauf auf. Allerdings ist hier der Zusammenhang weniger stark als im Falle des Arbeitsmarkts (0,45), da das Obertopic neben der Preisniveauentwicklung auch andere Bereiche der Geldpolitik betrifft (erstere ist durch das Untertopic 67 repräsentiert, hier beträgt der Korrelationskoeffizient 0,63).
+                </p>
+            <figure>
+               <graphic n="1006"
+                        width="6.011333333333333cm"
+                        height="5.028847222222222cm"
+                        url="109_final-2dd7b498c090150c441a64c88cbcdf53.png"
+                        rend="inline"/>
+            </figure>
+            <figure>
+               <graphic n="1007"
+                        width="9.974791666666667cm"
+                        height="6.028972222222222cm"
+                        url="109_final-e0489037f9eb682c323da8dea91a6b8c.png"
+                        rend="inline"/>
+               <head>
+                  <lb/>Abbildung 4: Obertopic Geldpolitik Anmerkungen: VPI = Verbraucherpreisindex des statistischen Bundesamts (bis 1990 Preisindex für die Lebenshaltung aller Privathaushalte), Veränderung ggü. Vorjahr. Quelle: eigene Darstellung, statistisches Bundesamt.
+                    </head>
+            </figure>
+            <p style="text-align:left; ">
+               <anchor id="Hlk525069885"/>Als drittes Beispiel sei das Obertopic 
+                    <hi rend="italic" space="preserve">Soziale Sicherung </hi>genannt. Hier ist die Sozialleistungsquote eine naheliegende Vergleichsvariable, mit welcher der Topic-Anteil leicht positiv korreliert (0,51). Allerdings wird anhand der Entwicklung deutlich, dass sich der SVR erst seit Ende der 1990er Jahre in größerem Umfang mit der Sozialpolitik befasste, einer Zeit, die mit dem Antritt der rot-grünen Regierung und deren Reformpolitik ganz im Zeichen der Sozialpolitik stand. Den Obertopics 
+                    <hi rend="italic">Öffentliche Finanzen</hi>, 
+                    <hi rend="italic">Wirtschaftsentwicklung</hi> und 
+                    <hi rend="italic">Weltwirtschaft</hi> ließen sich ebenfalls ökonomische Variablen zuordnen, beispielsweise die Staatschuldenquote (0,44), die Wachstumsrate des Bruttoinlandsprodukts (0,28) und der Leistungsbilanzsaldo (-0,06), für die verbleibenden Obertopics erscheint eine solche Zuordnung hingegen wenig 
+                    sinnvoll.<ref target="ftn7" n="7"/>
+            </p>
+            <figure>
+               <graphic n="1008"
+                        width="6.942666666666667cm"
+                        height="5.452180555555556cm"
+                        url="109_final-1b9046d018b19783c36e228a5496d83c.png"
+                        rend="inline"/>
+            </figure>
+            <figure>
+               <graphic n="1009"
+                        width="8.704791666666667cm"
+                        height="6.316486111111111cm"
+                        url="109_final-ddebd9032ec6e20aabc5e27c4e55c044.png"
+                        rend="inline"/>
+               <head>
+                  <lb/>Abbildung 5: Obertopic Soziale Sicherung Anmerkungen: Sozialleistungen in Prozent des BIP, bis 1990 unrevidierte Werte, ab 2009 einschließlich privater Krankenversicherung, bis 1991 früheres Bundesgebiet. Quelle: eigene Darstellung, Bundesministerium für Arbeit und Soziales
+                    </head>
+            </figure>
+            <p style="text-align:left; ">Mit der Arbeit von 
+                    
+                    <anchor id="CTVP0016bbcff4e9b9647e0a3db0748560c07cb"/>Wegner 
+                    
+                    <anchor id="CTVP0014d87f38dd73f4f6ca0044d14c0a27baf"/>(1985) liegt eine Vergleichsstudie zwischen den Jahresgutachten und Jahreswirtschaftsberichten vor, in denen die Bundesregierung u.a. zu den Jahresgutachten Stellung bezieht. Mittels der JSD kann dieser Vergleich aus einer neuen Perspektive angestellt und zeitlich erweitert werden. Da die JSD einer Topic-Verteilung über dieselben Topics bedarf, wurde ein weiteres Model für die Jahresgutachten und Jahreswirtschaftsberichte entworfen, aus dem vergleichbare Topics 
+                    resultierten.<ref target="ftn8" n="8"/>
+               <anchor id="Hlk525069912"/>Die in Abbildung 6 dargestellte Entwicklung zeigt, dass beide Subkorpora grundsätzlich eine mittlere bis schwache Divergenz aufweisen, sich also thematisch ähneln, wobei durchaus Schwankungen zu beobachten sind. Zusätzlich wurde die sprachliche Ähnlichkeit zwischen Jahresgutachten und Jahreswirtschaftsbericht auf Basis der Kosinus-Ähnlichkeit bestimmt. Nach Abzug der Stopwörter ergibt sich eine recht hohe, tendenziell abnehmende Kosinus-Ähnlichkeit, d.h. Jahresgutachten und Jahreswirtschaftsbericht nutzen ein ähnliches Vokabular. Die Korrelation zwischen JSD und Kosinus-Ähnlichkeit ist leicht negativ (-0,3), was plausibel erscheint: Je größer die Divergenz, desto kleiner ist die Ähnlichkeit.
+                </p>
+            <figure>
+               <graphic n="10010"
+                        width="12.70176388888889cm"
+                        height="7.383638888888889cm"
+                        url="109_final-387862f8abb4da7310ded9c20a2ed829.png"
+                        rend="inline"/>
+               <head>
+                  <lb/>
+                  <hi rend="italic" space="preserve">Abbildung 6: </hi>
+                  <anchor id="Hlk525070017"/>
+                  <hi rend="italic">JS-Divergenz und Kosinus-Ähnlichkeit von Jahresgutachten und Jahreswirtschaftsbericht</hi>
+               </head>
+            </figure>
+         </div>
+         <div type="div1" rend="DH-Heading1">
+            <head>Fazit und Ausblick</head>
+            <p style="text-align:left; ">Die Frage, ob sich die Jahresgutachten des SVR für eine Untersuchung mit Topic Models eignen, kann eindeutig bejaht werden. Für die gewählten Modellparameter ergeben sich interpretierbare, sinnvolle Topics, deren zeitliche Entwicklung auf Basis eines Vergleichs mit entsprechenden ökonomischen Variablen und generellen historischen Entwicklungen plausibel erscheint. Der forschungspraktische Nutzen ist in diesem Fall der folgende: (1) können die für ein bestimmtes Thema relevanten Textpassagen identifiziert werden, was das für historische Forschungsfragen unabdingbare 
+                    <hi rend="italic">close reading</hi> erheblich vereinfacht. Die Makroperspektive des Topic Models hilft, Relevantes von weniger Relevantem abzugrenzen und den Blick auf strukturelle Veränderungen des Korpus zu lenken. (2) ermöglicht bzw. erleichtert diese Makroperspektive diachrone Fragestellungen. Beispielsweise lassen sich durch die verschiedenen Bestandteile der Obertopics Veränderungen in der Betrachtungsweise eines ökonomisches Themengebiets, etwa des Arbeitsmarkts, identifizieren. Der empirische Zugang erlaubt zum einen den Abgleich mit Ergebnissen historisch-qualitativer Arbeiten zum Sachverständigenrat. Zum anderen werden die Jahresgutachten quantitativen Forschungsansätzen zugänglich gemacht. So ließe sich etwa untersuchen, in welcher zeitlichen bzw. kausalen Beziehung ökonomische Realität und deren Analyse durch den SVR zueinander stehen 
+                    
+                    <anchor id="CTVP001bcdb430b7bd44dcf9462486f5bc718c2"/>(Lüdering und Winker 2016); (3) eröffnen sich neue Möglichkeiten des Vergleichs mit anderen Quellen, wie den Jahreswirtschaftsberichten oder der Presseberichterstattung, was gerade für die Frage nach dem Beratungserfolg der Wirtschaftsweisen vielversprechend erscheint.
+                </p>
+         </div>
+      </body>
+      <back>
+         <div type="notes">
+            <note id="ftn1" n="1" rend="footnote text">
+                    Das erste Jahresgutachten sowie einige SG wurden aus hier nicht zu thematisierenden Gründen ausgeschlossen.
+                </note>
+            <note id="ftn2" n="2" rend="footnote text">
+                Siehe 
+                            <ref target="http://pdok.bundestag.de/">http://pdok.bundestag.de/</ref>
+               <hi rend="Hyperlink" space="preserve"> Zuletzt geprüft am 04.09.2018.</hi>
+            </note>
+            <note id="ftn3" n="3" rend="footnote text">
+                    Siehe http://mallet.cs.umass.edu/ 
+                    <hi rend="Hyperlink">Zuletzt geprüft am 04.09.2018.</hi>
+            </note>
+            <note id="ftn4" n="4" rend="footnote text">
+                    Einsehbar unter: 
+                    <ref target="https://drive.google.com/open?id=1H3RTw-wu-ggIXFocFwFDJG9vwlypFfko">https://drive.google.com/open?id=1H3RTw-wu-ggIXFocFwFDJahresgutachten9vwlypFfko</ref>
+            </note>
+            <note id="ftn5" n="5" rend="footnote text">
+                    Eine Topic-Karte ist einsehbar unter 
+                    <ref target="https://drive.google.com/open?id=1p4KBCAahA4zq4z4iTQ5UzcGXqp6qG35t">https://drive.google.com/open?id=1p4KBCAahA4zq4z4iTQ5UzcGXqp6qG35t</ref>
+            </note>
+            <note id="ftn6" n="6" rend="footnote text">
+                    Diese lautet verkürzt: Arbeitslosigkeit resultiert aus schlechten Angebotsbedingungen, insbesondere aus einem Mangel an Investitionen seitens der Unternehmen aufgrund zu hoher Arbeitskosten. Demnach kann Arbeitslosigkeit durch Lohnzurückhaltung reduziert werden.
+                </note>
+            <note id="ftn7" n="7" rend="footnote text">
+                    Grundsätzlich stellt sich hier in Anbetracht des allgemeinen Charakter der Obertopics natürlich die Schwierigkeit der Auswahl geeigneter ökonomischer Variablen.
+                </note>
+            <note id="ftn8" n="8" rend="footnote text">
+                    Einsehbar unter: 
+                    <ref target="https://drive.google.com/open?id=1qNLV3j2B2yE14QiH06SihSh_rCZwvYrL">https://drive.google.com/open?id=1qNLV3j2B2yE14QiH06SihSh_rCZwvYrL</ref>. Ein Dispersionsplot der Suchbegriffe „Sachverständigenrat“ und „Jahresgutachten“ im JWB-Korpus findet sich unter 
+                    <ref target="https://drive.google.com/open?id=1yiOT4NOrchueh2FXgsHN3V3wUzSDsZyR">https://drive.google.com/open?id=1yiOT4NOrchueh2FXgsHN3V3wUzSDsZyR</ref>
+            </note>
+         </div>
+         <div type="bibliogr">
+            <listBibl>
+               <head>Bibliographie</head>
+               <bibl style="text-align:left; ">
+                  <anchor id="CTVL0017dca56499900447084b0811edf35d7c8"/>
+                  <hi rend="bold">Aletras, Nikolaos; Stevenson, Mark 2014</hi>: <hi rend="italic">Measuring the Similarity between Automatically Generated Topics</hi>. In: 
+                        <hi rend="italic">Proceedings of the 14th Conference of the European Chapter of the ACL</hi>, S. 22–27.
+                    </bibl>
+               <bibl style="text-align:left; ">
+                  <anchor id="CTVL0015c66198d7d4747fdab976244cb5c5f25"/>
+                  <hi rend="bold">Blei, David; Ng, Andrew Y.; Jordan, Michael I. 2003</hi>: <hi rend="italic">Latent Dirichlet Allocation</hi>. In: 
+                        <hi rend="italic" space="preserve">Journal of Machine Learning Research </hi>3, S. 993–1022.
+                    </bibl>
+               <bibl style="text-align:left; ">
+                  <anchor id="CTVL001754a5bcbc75e43e7aa7d39d9723f6e54"/>
+                  <hi rend="bold">Blei, David M. 2012</hi>: <hi rend="italic">Probabilistic Topic Models</hi>. In: 
+                        <hi rend="italic" space="preserve">Communications of the ACM </hi>55 (4), S. 77–84.
+                    </bibl>
+               <bibl style="text-align:left; ">
+                  <anchor id="CTVL001e7ff19bfc6e6420987353b42e6a617ea"/>
+                  <hi rend="bold">Boyd-Graber, Jordan; Hu, Yuening; Mimno, David 2017</hi>: <hi rend="italic">Applications of topic models</hi>. Boston: now (Foundations and trends in information retrieval).
+                    </bibl>
+               <bibl style="text-align:left; ">
+                  <anchor id="CTVL001c964835a911e4c74bbfd52974fcd69eb"/>
+                  <hi rend="bold">Boyd-Graber, Jordan; Mimno, David; Newman, David J. 2015</hi>: <hi rend="italic">Care and Feeding of Topic Models</hi>. In: <hi rend="bold">Edoardo M. Airoldi, David M. Blei, Elena A. Erosheva und Stephen E. Fienberg (Hg.)</hi>: <hi rend="italic">Handbook of Mixed Membership Models and Their Applications</hi>. Boca Raton, S. 225–274.
+                    </bibl>
+               <bibl style="text-align:left; ">
+                  <anchor id="CTVL00178359664bea243a5a4ee7b39d8cf82b6"/>
+                  <hi rend="bold">Heyer, Gerhard 2009</hi>: <hi rend="italic">Introdution to TMS 2009</hi>. In: <hi rend="bold">Gerhard Heyer (Hg.)</hi>: <hi rend="italic">Text mining services.</hi> Leipzig: LIV (Leipziger Beiträge zur Informatik, Bd. 14), S. 1–14.
+                    </bibl>
+               <bibl style="text-align:left; ">
+                  <anchor id="CTVL001c9d2b67288c24d868dd76f10101a5cb8"/>
+                  <hi rend="bold">Jockers, Matthew Lee 2013</hi>:<hi rend="italic"> Macroanalysis. Digital Methods and Literary History</hi>. Urbana Ill.
+                    </bibl>
+               <bibl style="text-align:left; ">
+                  <anchor id="CTVL001088f540757c446bcba430f60b4252aaa"/>
+                  <hi rend="bold">Lüdering, Jochen; Winker, Peter 2016</hi>: <hi rend="italic">Forward or Backward Looking? The Economic Discourse and the Observed Reality</hi>. In: 
+                        <hi rend="italic" space="preserve">Journal of Economics and Statistics </hi>236 (4), S. 483–515.
+                    </bibl>
+               <bibl style="text-align:left; ">
+                  <anchor id="CTVL001a6663a090fd04a0280fcb0c847caea49"/>
+                  <hi rend="bold">Murzintcev, Nikita 2016</hi>: <hi rend="italic">ldatuning (R package)</hi>. Online verfügbar unter https://cran.r-project.org/web/packages/ldatuning/ldatuning.pdf, zuletzt geprüft am 19.03.2018.
+                    </bibl>
+               <bibl style="text-align:left; ">
+                  <anchor id="CTVL0010f0c343e39c74af099f60bde051ec55c"/>
+                  <hi rend="bold">Schanetzky, Tim 2007</hi>: <hi rend="italic">Die große Ernüchterung. Wirtschaftspolitik Expertise und Gesellschaft in der Bundesrepublik 1966 bis 1982.</hi> Berlin.
+                    </bibl>
+               <bibl style="text-align:left; ">
+                  <anchor id="CTVL00112676f00f5c348c9940edff963078c82"/>
+                  <hi rend="bold">Steyvers, Mark; Griffiths, Tom 2007</hi>: <hi rend="italic">Probabilistic Topic Models.</hi> In: <hi rend="bold">Thomas K. Landauer, Danielle S. McNamara, Simon Dennis und Walter Kintsch (Hg.)</hi>: <hi rend="italic">Handbook of Latent Semantic Analysis.</hi> Hoboken, S. 427–448.
+                    </bibl>
+               <bibl style="text-align:left; ">
+                  <anchor id="CTVL001a9e4db213f0d490795c36a66cfd584b2"/>
+                  <hi rend="bold">Strätling, Ansgar 2001</hi>: <hi rend="italic">Sachverständiger Rat im Wandel. Der theoretische Argumentationshintergrund des Sachverständigenrats zur Begutachtung der Gesamtwirtschaftlichen Entwicklung zur Beschäftigungspolitik von 1964-1999.</hi> Marburg.
+                    </bibl>
+               <bibl style="text-align:left; ">
+                  <anchor id="CTVL0015a9fd537a6b448e9a9f78d73c2f20af3"/>
+                  <hi rend="bold">Wegner, Klaus 1985</hi>: <hi rend="italic">Im Blickpunkt: Sachverständigenrat und Konjunktur- und Wachstumspolitik der Bundesregierung seit 1964.</hi> Frankfurt.
+                    </bibl>
+               <bibl style="text-align:left; ">
+                  <anchor id="CTVL001608228ef1e25414b94365b047e59cc53"/>
+                  <hi rend="bold">Wehrheim, Lino 2018</hi>: <hi rend="italic">Economic History Goes Digital: Topic Modeling the Journal of Economic History.</hi> In: 
+                        <hi rend="italic" space="preserve">Cliometrica. DOI: </hi>10.1007/s11698-018-0171-7.
+                    </bibl>
+               <bibl style="text-align:left; ">
+                  <anchor id="CTVL00125ac375e02c043f5bc247652f7b184fe"/>
+                  <hi rend="bold">Wiedemann, Gregor 2016</hi>: <hi rend="italic">Text Mining for Qualitative Data Analysis in the Social Sciences. A Study on Democratic Discourse in Germany</hi>. Wiesbaden.
+                    </bibl>
+            </listBibl>
+         </div>
+      </back>
+   </text>
+</TEI>
