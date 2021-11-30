@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     xml:id="dhd_BURGHARDT_Manuel_Digital_Dylan___Computergestützte_Analyse_d">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title xml:lang="de">Digital Dylan – Computergestützte Analyse der Liedtexte von Bob Dylan (1962 – 2016)</title>
+            <author>
+               <persName>
+                  <surname>Sippl</surname>
+                  <forename>Colin</forename>
+               </persName>
+               <affiliation>
+                  <orgName>
+                     <name type="main">Lehrstuhl für Medieninformatik, Universität Regensburg</name>
+                  </orgName>
+                  <country>Deutschland</country>
+               </affiliation>
+            </author>
+            <author>
+               <persName>
+                  <surname>Fuchs</surname>
+                  <forename>Florian</forename>
+               </persName>
+               <affiliation>
+                  <orgName>
+                     <name type="main">Lehrstuhl für Medieninformatik, Universität Regensburg</name>
+                  </orgName>
+                  <country>Deutschland</country>
+               </affiliation>
+            </author>
+            <author>
+               <persName>
+                  <surname>Burghardt</surname>
+                  <forename>Manuel</forename>
+               </persName>
+               <affiliation>
+                  <orgName>
+                     <name type="main">Lehrstuhl für Medieninformatik, Universität Regensburg</name>
+                  </orgName>
+                  <country>Deutschland</country>
+               </affiliation>
+            </author>
+         </titleStmt>
+      </fileDesc>
+      <profileDesc>
+         <textClass>
+            <keywords n="category">
+               <term>Poster</term>
+            </keywords>
+            <keywords n="keywords">
+               <term>Liedtexte</term>
+               <term>Korpusvergleich</term>
+               <term>Frequenzanalyse</term>
+               <term>Signifikanztest</term>
+            </keywords>
+            <keywords n="topics">
+               <term>Entdeckung</term>
+               <term>Inhaltsanalyse</term>
+               <term>Webentwicklung</term>
+               <term>Text</term>
+               <term>Visualisierung</term>
+            </keywords>
+         </textClass>
+      </profileDesc>
+   </teiHeader>
+   <text xml:lang="de">
+      <body>
+         <div type="div1" rend="DH-Heading1">
+            <head>Hintergrund und Zielsetzung</head>
+            <p>Am 13. Oktober 2016 gab die Schwedische Akademie bekannt, dass sie den Nobelpreis in Literatur an Bob Dylan „für seine poetischen Neuschöpfungen in der großen amerikanischen Songtradition“ verleihen werde. 
+                    
+                    Dass Dylan als Musiker und Songwriter den Literaturnobelpreis erhielt wurde mitunter sehr kontrovers diskutiert. Auf Kritik stieß z.B. die unzulässige Herauslösung von Dylans Texten aus der Musik und die Deutung seiner Lieder als Gedichte. 
+                    
+                    Unbestritten ist nichtsdestotrotz Bob Dylans Rolle als einer der einflussreichsten Musiker des 20. Jahrhunderts. 
+                    
+                </p>
+            <p>Die (welt-)politischen Entwicklungen, die das Schaffen Dylans inspirierten, sind im Kontext seines Wirkens umfassend diskutiert worden, unter anderem in „Bob Dylan und die sechziger Jahre: Aufbruch und Abkehr“, 
+                   
+                    und liefern noch immer Diskussionsstoff, wie etwa eine in jüngerer Zeit erschienene Arbeit von Taylor &amp; Israelson (2015) 
+                    
+                   über Dylans politische Einflüsse zeigt. Erfolgte die Beschäftigung mit Dylans Werk bislang allenfalls episodisch, so muss eine systematische Analyse des Gesamtwerks als Desiderat gelten, welches in gewisser Weise bereits von Bob Dylan selbst formuliert wurde:
+                </p>
+            <quote>All these people who say whatever it is I’m supposed to be doing – that’s all gonna pass, because, obviously, I’m not gonna be around forever. That day’s gonna come when there aren’t gonna be any more records, and then people won’t be able to say ‘Well, this one’s not as good as the last one.’ 
+                    <hi rend="bold">They’re gonna have to look at it all (eigene Hervorhebung). </hi>And I don’t know what the picture will be, what people’s judgement will be at that time. I can’t help you in that area. 
+                    <hi rend="italic">– Bob Dylan </hi>
+               <hi rend="italic"> </hi>
+            </quote>
+            <p>Dieser Beitrag erprobt, inwiefern mithilfe digitaler Methoden im Sinne des 
+                    <hi rend="italic">Distant Reading</hi>-Paradigmas ein neuer Zugang zu Dylans Gesamtwerk geschaffen werden kann. Bezugnehmend auf das Konferenzmotto einer „Kritik der Digitalen Vernunft“ soll untersucht werden, wo die Grenzen und Möglichkeiten eines solchen digitalen Analyseansatzes liegen, indem überprüft wird, ob sich bestehende qualitative Einteilungen von Dylans Werk in unterschiedliche Schaffensperioden auch anhand statistisch signifikanter Wörter (Rayson, Berridge &amp; Francis 2004) und N-Gramme (Evert 2005) belegen lassen. 
+                </p>
+         </div>
+         <div type="div1" rend="DH-Heading1">
+            <head>Stand der Forschung</head>
+            <p>Bereits vor der Auszeichnung Dylans mit dem Nobelpreis in Literatur, waren seine Texte Gegenstand wissenschaftlicher Betrachtungen im Sinne des 
+                    <hi rend="italic">Close Reading</hi> (vgl. etwa Brown 2014). Brown unterteilt Dylans Werk in einzelne Phasen und verknüpft diese jeweils mit allgemeinen, zeitgeschichtlichen Ereignissen sowie biographischen Meilensteinen des Künstlers. Taylor &amp; Israelson (2015) gehen einen ähnlichen Weg, versuchen jedoch Dylans Werk abseits verbreiteter politischer Einordnungen zu betrachten. Etwas anders ausgerichtet ist die Arbeit von Wissolik et al. (1994): Hierbei handelt es sich um eine Art Wörterbuch, in dem Namen und Gegenstände, die in Dylans Texten auftauchen, erläutert werden. 
+                </p>
+            <p>Eine umfassende Untersuchung Dylans Werks mithilfe computerbasierter Methoden fand sich bis zum Abfassungszeitpunkt des vorliegenden Texts nicht. Allerdings sind quantitative Verfahren zur stilistischen und inhaltlichen Analyse von Liedtexten in den Digital Humanities durchaus verbreitet. So beschreiben etwa, 
+                    
+                    wie mithilfe von N-Gramm-Modellen ein Liedtext-Korpus anhand der Merkmale Textlänge, Textstruktur, Wortschatz und Semantik analysiert werden kann, um eine automatisierte Genrezuordnung vornehmen zu können. Daneben existieren stilometrische Untersuchungen von Liedern oder Gedichten, die sich mit der Berechnung von autoren- und genrespezifischen Merkmalen befassen, wie z.B. Suzuki &amp; Hosoya (2014), die japanische Pop-Songs analysieren.
+                </p>
+         </div>
+         <div type="div1" rend="DH-Heading1">
+            <head>Forschungsmethodik</head>
+            <div type="div2" rend="DH-Heading2">
+               <head>Bezugsrahmen der Analyse: Schaffensphasen Bob Dylans</head>
+               <p>Den analytischen Bezugsrahmen dieser Studie stellt die phasenweise Einteilung von Dylans Schaffen nach Brown (2014)
+                         
+                        dar. 
+                         
+                        Brown unterscheidet dabei neun unterschiedliche Phasen, die mit „Becoming Bob Dylan“ (1960-1964) beginnen und vorläufig mit „Bob Dylan Revisited“ (2000-2012) enden. Diese Stilphasen umfassen z.B. Dylans Hinwendung zum Christentum oder seine elektronische „Folk Rock“-Phase (vgl. Brown, 2014).
+                    </p>
+            </div>
+            <div type="div2" rend="DH-Heading2">
+               <head>Korpus und Datenaufbereitung</head>
+               <p>In dieser Arbeit wurde ein Korpus bestehend aus 452 Liedtexten mit einem Umfang von 133.045 Tokens untersucht, die Bob Dylan zwischen den Jahren 1962 und 2016 auf Studio-Alben veröffentlicht hat. Die Liedtexte und Metainformationen wie etwa Titel, Album und Jahr stammen von der Plattform 
+                        <hi rend="italic">LyricsWikia</hi>
+                  <ref target="ftn1" n="1"/>. Da es sich bei 
+                        <hi rend="italic">LyricsWikia</hi> um ein community-gestütztes Projekt handelt, erfolgte vorab ein stichprobenartiger Abgleich einzelner Lieder mit den offiziellen Texten nach, 
+                        
+                        wobei keinerlei Abweichungen festgestellt werden konnten. 
+                    </p>
+               <p>Das Korpus wurde weiterhin mit Methoden der Computerlinguistik aufbereitet, insbesondere unter Verwendung des 
+                        <hi rend="italic">Python Natural Language Toolkits</hi> (NLTK<ref target="ftn2" n="2"/>). Die Verarbeitung des Korpus umfasst die grundlegende Lemmatisierung mit dem 
+                        <hi rend="italic">WordNet-Lemmatizer</hi> (Teil des NLTK) und eine Stoppwortbereinigung (NLTK-Stoppwortliste für Englisch mit eigener Erweiterung<ref target="ftn3" n="3"/>) sowie die Wortartenannotation mithilfe des 
+                        <hi rend="italic">Stanford Log-linear Part-of-Speech-Taggers</hi>.
+                        
+                        Da Dylan in seinen Texten häufig umgangssprachliche Formulierungen wie etwa verkürzte Gerundformen (bspw. „savin“, „swimmin“) verwendet, wurde für den POS-Tagger ein Modell verwendet, welches auf der Grundlage von Twitter-Texten trainiert wurde und gute Ergebnisse für Texte mit nicht-standardisiertem Vokabular und Slang liefert. 
+                        
+                    </p>
+            </div>
+            <div type="div2" rend="DH-Heading2">
+               <head>Korpusvergleich – Assoziationsmaße und Referenzkorpus</head>
+               <div type="div3" rend="DH-Heading3">
+                  <head>Assoziationsmaße</head>
+                  <p>Ein etabliertes Verfahren, um aus einem Korpus spezifische Wörter zu extrahieren, ist ein direkter Korpusvergleich mit dem 
+                            <hi rend="italic">Log-Likelihood</hi>-Test, 
+                            
+                            der sich zum Vergleich von Korpora unterschiedlicher Größe besonders eignet (Rayson, Berridge, &amp; Francis, 2004). Damit können Wörter, die im untersuchten Korpus mit einem signifikanten Frequenzunterschied zum Referenzkorpus auftreten, als Schlagworte betrachtet werden. Dies kann besonders aussagekräftige Ergebnisse liefern, wenn zusätzlich eine POS-Filterung erfolgt, womit sich beispielsweise signifikante Nomen oder Verben eines Korpus berechnen lassen. Darüber hinaus wurde eine Berechnung von N-Grammen in Form von Bi- und Trigrammen umgesetzt. Die berechneten N-Gramme lassen sich in der Web-App unter der Wahl eines Assoziationsmaßes, wie dem 
+                            <hi rend="italic">Chi Quadrat-Test, dem Jaccard-Test, dem Poisson-Stirling-Test, dem Likelihood Ratio-Test sowie dem Pointwise Mutual Information-Test</hi> anzeigen. Dabei liefert jedes Verfahren zur N-Gramm-Berechnung eigene spezifische Ergebnisse. Dieser Freiraum wird ganz bewusst erhalten, um die verschiedenen Facetten eines Texts, die ein Assoziationsmaße jeweils anzeigt, für die spätere Datenanalyse nutzen zu können.
+                        </p>
+               </div>
+               <div type="div3" rend="DH-Heading3">
+                  <head>Referenzkorpus </head>
+                  <p>Als Referenzkorpus dient das mündliche Subkorpus des 
+                            <hi rend="italic">Open American National Corpus</hi> (OANC; American National Corpus Project),
+                            
+                            welches insgesamt 3.862.172 Tokens umfasst. Das Korpus enthält viele Belege aus der mündlichen Kommunikation 
+                             
+                            und eignet sich dadurch in besonderer Weise als Vergleichskorpus für Dylans Texte, die wie bereits beschrieben einen hohen Anteil umgangssprachlicher Formulierungen und Slang-Ausdrücke enthalten.
+                        </p>
+                  <p>Beim Korpusvergleich kann entweder das gesamte Dylan-Korpus mit dem Referenzkorpus verglichen werden, oder mit den jeweiligen Dylan-Subkorpora, also bspw. all seinen Texten aus den 1970er-Jahren oder aus der ersten Schaffensperiode „Becoming Bob Dylan“ (1960-1964). Ein Vergleich der einzelnen Dylan-Subkorpora zum Gesamtwerk ist ebenso möglich. Letztere Option wird z.B. genutzt, um anhand jeweils signifikanter Wörter die einzelnen Schaffensperioden nach Brown (2014) zu überprüfen und damit die grundsätzliche Eignung solch quantitativer Verfahren zur Identifikation thematischer Verschiebungen zu untersuchen. Die Ergebnisse dieses Korpusvergleichs sind, zusammen mit allen anderen Ergebnissen der angewandten Analyseverfahren, in einer interaktiven Webanwendung über unterschiedliche Visualisierungen (Balkendiagramm, 
+                            <hi rend="italic">treemap, wordcloud, Tabelle</hi>) für weitere Interpretationen zugänglich<ref target="ftn4" n="4"/>. Wie schon bei den Assoziationsmaßen, so gilt auch hier, dass jede Visualisierungsform eine bestimmte Perspektive auf die Berechnungsergebnisse eröffnet.
+                        </p>
+               </div>
+            </div>
+         </div>
+         <div type="div1" rend="DH-Heading1">
+            <head>Ergebnisse</head>
+            <p>Im direkten Vergleich des gesamten Dylan-Korpus (1962-2016) mit dem OANC-Referenzkorpus treten einige interessante, signifikant-häufige Wörter im Werk Dylans hervor. Die von Bob Dylan verwendeten Adjektive erzeugen in der Gesamtschau tendenziell eher eine bedrückende Stimmung (<hi rend="italic">blind, weary, lonely, drunken, scared, restless, ragged</hi>). Bei den Substantiven mischen sich unter viele Personen- und Ortsnamen auch religiöse Begriffe (<hi rend="italic">soul, heaven, devil, eden, prayer, paradise</hi>). Viele der übrigen Begriffe sind erwartungsgemäß typisch für Folk-Musik (<hi rend="italic">levee, rooster, train</hi>), was sich wiederum durch die Wahl des Referenzkorpus, das verschiedenartige mündliche Textquellen enthält, erklären lässt (Rayson, Berridge, &amp; Francis, 2004: 8).
+                </p>
+            <p>Die Analyse signifikant-häufiger Wörter für die einzelnen Schaffensphasen Dylans liefert Ergebnisse mit hoher Aussagekraft. So fällt etwa für die Phase „The Changing of the Guard" (1978-1981), in der sich Dylan dem Christentum hinwendet, auf, dass das Vokabular tatsächlich viele christliche Motive aufweist (<hi rend="italic">lord, Jesus, devil, altar, faith, confession, grace, power, serve</hi>). Insgesamt nimmt der Anteil an „düsterem“ Vokabular in dieser Phase ab, verschwindet jedoch nicht komplett (bspw. 
+                    <hi rend="italic">shot, destruction</hi>). Der Anteil an hoffnungsvollen Wörtern nimmt hingegen zu (bspw. 
+                    <hi rend="italic">beginning, ready, arise, wake, thank</hi>). Bei den übrigen Schaffensphasen fallen die Ergebnisse jedoch mitunter wesentlich weniger deutlich aus.
+                </p>
+            <p>Ein differenziertes Bild ergibt sich für die N-Gramm-Analyse, was einerseits der Vielfalt an verfügbaren Methoden zur Berechnung 
+                     
+                    und andererseits den unterschiedlichen N-Gramm-Längen geschuldet ist. Die Ergebnisse für Bigramme mit Hilfe des 
+                    <hi rend="italic">Pointwise-Mutual-Information</hi>-Tests (PMI) erschienen dabei am geeignetsten, um die thematischen Schwerpunkte von Dylans Schaffensphasen nach 
+                     
+                    nachzuvollziehen. So findet das PMI-Verfahren im Subkorpus der Phase „The Changing of the Guard“ (1978-1981) Bigramme wie 
+                    <hi rend="italic">close prayer, name lucifer, jesus good, jesus bone oder arise upon</hi>, die eindeutig religiöse Bezüge in Dylans Texten dieser Phase veranschaulichen. Generell fällt jedoch die Dominanz von Refrain-Versen in den Liedern bedeutend ins Gewicht (z.B. 
+                    <hi rend="italic">knock heaven door</hi>), was die Qualität der Ergebnisse insbesondere bei den Trigrammen beeinflusst. 
+                </p>
+         </div>
+         <div type="div1" rend="DH-Heading1">
+            <head>Diskussion</head>
+            <p>Im Sinne einer Kritik der Digitalen Vernunft bleibt demnach festzuhalten, dass sich Methoden der computergestützten Textanalyse und des statistischen Korpusvergleichs grundsätzlich dafür eignen, einen inhaltlichen Gesamtüberblick zu einem Liedtext-Korpus zu erhalten. Es können damit diachrone Entwicklungen des Wortschatzes und Verlagerungen thematischer Schwerpunkte als grobe Tendenzen aufgezeigt werden, um das Bild des Gesamtwerks zu ergänzen. Ein solcher Ansatz eignet sich demnach gut für die initiale Thesengenerierung und kann in gewisser Weise die Funktion eines Empfehlungs- bzw. Hinweissystems für erklärungsbedürftige Stellen
+                    <ref target="ftn5" n="5"/> in den Geisteswissenschaften übernehmen.
+                </p>
+            <p>Die Identifikation konkreter Schaffensperioden, ausschließlich auf Basis signifikant häufiger Wörter ist aber – zumindest für das Werk Dylans – nicht ohne Weiteres erfassbar. Bei den N-Grammen zeigt sich, dass im Falle von Dylans Texten methodenübergreifend und mit zunehmender N-Gramm-Länge meist keine brauchbaren Ergebnisse erzielt werden konnten. Dies ist ein Hinweis darauf, dass die hier präsentierten Analysemethoden, die für andere Textsorten wie bspw. Parlamentsprotokolle bereits erfolgreich eingesetzt werden konnten (vgl. Sippl et al. 2016), auf Liedtexte nur eingeschränkt anwendbar sind. Ein möglicher Kritikpunkt am hier beschriebenen Vorgehen mag zudem das verwendete OANC-Referenzkorpus sein, welches trotz hoher Anteile mündlicher Kommunikation doch nur beschränkt vergleichbar mit der Textsorte „Liedtext“ ist. Für künftige Vergleichsstudien böte sich ggf. ein Vergleich mehrerer unterschiedlicher Künstler und deren Liedtexte an, also bspw. Bob Dylan vs. Johnny Cash.</p>
+         </div>
+      </body>
+      <back>
+         <div type="notes">
+            <note id="ftn1" n="1" rend="footnote text"> http://lyrics.wikia.com, alle Hyperlinks dieses Dokuments wurden zuletzt abgerufen am 10.01.2018</note>
+            <note id="ftn2" n="2" rend="footnote text"> Verfügbar unter http://www.nltk.org/</note>
+            <note id="ftn3" n="3" rend="footnote text"> Filterung von Stoppwörtern, wie „hey“, „ah“, „yeah“, und Verkürzungen, wie „‘ve“, „‘s“ etc.</note>
+            <note id="ftn4" n="4" rend="footnote text"> https://www.colin-sippl.de/dylan (Klick auf den Analyse-Button rechts oben)</note>
+            <note id="ftn5" n="5" rend="footnote text"> Diesen Gedanken äußerte Hubertus Kohle auf der #DigiCampus-Tagung im Juni 2017 in München, vgl. https://twitter.com/8urghardt/status/876725916487036928.</note>
+         </div>
+         <div type="bibliogr">
+            <listBibl>
+               <head>Bibliographie</head>
+               <bibl>
+                  <hi rend="bold">American National Corpus Project</hi> (2015a): 
+                        <hi rend="italic">American National Corpus. Frequency Data</hi>. http://www.anc.org/data/anc-second-release/frequency-data/ [Letzter Zugriff 10. März 2017].
+                    </bibl>
+               <bibl>
+                  <hi rend="bold">American National Corpus Project</hi> (2015b): 
+                        <hi rend="italic">The Open American National Corpus (OANC)</hi>. http://www.anc.org/ [Letzter Zugriff 10. März 2017].
+                    </bibl>
+               <bibl>
+                  <hi rend="bold">Brown, Donald</hi> (2014): 
+                        <hi rend="italic">Bob Dylan: American troubadour</hi>. Lanham, Md. [u.a.]: Rowman &amp; Littlefield.
+                    </bibl>
+               <bibl>
+                  <hi rend="bold">Cott, Jonathan</hi> (2006): 
+                        <hi rend="italic">Bob Dylan, the essential interviews</hi>. New York: Wenner Books.
+                    </bibl>
+               <bibl>
+                  <hi rend="bold">Derczynski, Leon et al.</hi> (2013): "Twitter part-of-speech tagging for all: Overcoming sparse and noisy data", in: 
+                        <hi rend="italic">Proceedings of the Recent Advances in Natural Language Processing</hi> September, 198–206. http://www.derczynski.com/sheffield/papers/twitter_pos.pdf [Letzter Zugriff 9. März 2017].
+                    </bibl>
+               <bibl>
+                  <hi rend="bold">Dylan, Bob</hi> (2016): 
+                        <hi rend="italic">The lyrics: 1961-2012</hi>. New York: Simon &amp; Schuster.
+                    </bibl>
+               <bibl>
+                  <hi rend="bold">Evert, Stefan</hi> (2005): "The Statistics of Word Cooccurrences, Word Pairs and Collocations", in: 
+                        <hi rend="italic">Unpublished doctoral dissertation Institut fur maschinelle Sprachverarbeitung Universitat Stuttgart</hi> 98: August 2004, 353. http://en.scientificcommons.org/19948039 [Letzter Zugriff 3. März 2017].
+                    </bibl>
+               <bibl>
+                  <hi rend="bold">Fell, Michael / Sporleder, Caroline </hi>(2014): "Lyrics-based Analysis and Classification of Music", in: 
+                        <hi rend="italic">International Conference on Computational Linguistics</hi> 25: 23–29, 620–631.
+                    </bibl>
+               <bibl>
+                  <hi rend="bold">Geisel, Sieglinde</hi> (2016): 
+                        <hi rend="italic">Bob Dylan - Literaturnobelpreisträger wider Willen</hi>. Deutschlandradio Kultur. http://www.deutschlandradiokultur.de/bob-dylan-literaturnobelpreistraeger-wider-willen.1005.de.html?dram:article_id=373494 [Letzter Zugriff 7. März 2017].
+                    </bibl>
+               <bibl>
+                  <hi rend="bold">Rayson, Paul / Garside, Roger </hi>(2000): "Comparing corpora using frequency profiling", in: 
+                        <hi rend="italic">Proceedings of the workshop on Comparing Corpora</hi> 1–6.
+                    </bibl>
+               <bibl>
+                  <hi rend="bold">Rayson, Paul / Berridge, Damon / Francis, Brian </hi>(2004): "Extending the Cochran rule for the comparison of word frequencies between corpora", in: 
+                        <hi rend="italic">JADT 2004: 7es Journées internationales d’Analyse statistique des Données Textuelles:</hi> 1–12.
+                    </bibl>
+               <bibl>
+                  <hi rend="bold">Schmidt, Mathias R.</hi> (1983): 
+                        <hi rend="italic">Bob Dylan und die sechziger Jahre: Aufbruch und Abkehr</hi>. Frankfurt am Main: Fischer Taschenbuch Verlag.
+                    </bibl>
+               <bibl>
+                  <hi rend="bold">Sippl, Colin / Burghardt, Manuel / Wolff, Christian / Mielke, Bettina </hi>(2016): Korpusbasierte Analyse österreichischer Parlamentsreden. In: 
+                        <hi rend="italic">Netzwerke: Tagungsband des 19. Int. Rechtsinformatik Symposions IRIS 2016: 25.- 7. Feb. 2016, Univ. Salzburg, S. 139-148.</hi>
+               </bibl>
+               <bibl>
+                  <hi rend="bold">Suzuki, Takafumi / Hosoya, Mai </hi>(2014): "Computational Stylistic Analysis of Popular Songs of Japanese Female Singer-songwriters", in: 
+                        <hi rend="italic">Digital Humanities Quarterly</hi> 8: 1, .
+                    </bibl>
+               <bibl>
+                  <hi rend="bold">Svenska Akademien</hi> (2016): 
+                        <hi rend="italic">Der Nobelpreis in Literatur des Jahres 2016</hi>.
+                    </bibl>
+               <bibl>
+                  <hi rend="bold">Taylor, Jeff / Israelson, Chad </hi>(2015): 
+                        <hi rend="italic">The Political World of Bob Dylan: Freedom and Justice, Power and Sin</hi>. New York: Palgrave Macmillan.
+                    </bibl>
+               <bibl>
+                  <hi rend="bold">Toutanova, Kristina / Klein, Dan / Manning, Christopher D </hi>(2003): "Feature-rich part-of-speech tagging with a cyclic dependency network", in: 
+                        <hi rend="italic">Proceedings of the 2003 Conference of the North American Chapter of the Association for Computational Linguistics on Human Language Technology - Volume 1 (NAACL ’03),</hi> 252–259. http://nlp.stanford.edu/~manning/papers/tagging.pdf [Letzter Zugriff 3. März 2017].
+                    </bibl>
+               <bibl>
+                  <hi rend="bold">Wissolik, Richard David / McGrath, Scott. / Colaianne, A. J. </hi>(1994): 
+                        <hi rend="italic">Bob Dylan’s words: a critical dictionary and commentary</hi>. Greensburg, PA: Eadmer Press.
+                    </bibl>
+            </listBibl>
+         </div>
+      </back>
+   </text>
+</TEI>
