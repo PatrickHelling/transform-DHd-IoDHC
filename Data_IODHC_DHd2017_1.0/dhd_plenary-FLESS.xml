@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="dhd_plenary-FLESS">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title xml:lang="de">Wenn Forschen ein nicht reproduzierbarer Prozess ist – Nachhaltigkeit als Herausforderung in der Archäologie</title>
+            <author>
+               <persName>
+                  <surname>Fless</surname>
+                  <forename>Friederike</forename>
+               </persName>
+               <affiliation>
+                  <orgName>
+                     <name type="main">Deutsches Archäologisches Institut</name>
+                  </orgName>
+                  <country>Deutschland</country>
+               </affiliation>
+            </author>
+         </titleStmt>
+      </fileDesc>
+      <profileDesc>
+         <textClass>
+            <keywords n="category">
+               <term>Plenary</term>
+            </keywords>
+            <keywords n="keywords">
+               <term/>
+            </keywords>
+            <keywords n="topics">
+               <term/>
+            </keywords>
+         </textClass>
+      </profileDesc>
+   </teiHeader>
+   <text xml:lang="de">
+      <body>
+         <p>Ein Archäologe arbeitet sich bei einer Ausgrabung durch viele historische Schichten in die Tiefe. Dieser Prozess ist nicht umkehrbar, so dass der Dokumentation des Grabungsprozesses eine besondere Bedeutung zukommt. Wie aber sichert man solche Daten, die in vielfältigen Formaten heute digital erhoben werden, langfristig? Wie kann man diese Daten in einem geschlossenen Datenlebenszyklus für Nachnutzungen zur Verfügung stellen? In welcher Weise können wir mit der Vielfalt von Datenformaten umgehen?  Diesen grundsätzlichen Fragen will der Vortrag ausgehend von einer konkreten Disziplin, der Archäologie, nachgehen und dabei auch die aktuellen Entwicklungen im Bereich des Forschungsdatenmanagements aufzeigen. Aktuelle Vorschläge, wie sie der Rat für Informationsinfrastruktur in Deutschland für die Entwicklung einer Nationalen Forschungsdateninfrastruktur publiziert hat, sollen dabei ebenso beleuchtet werden wie die dahinter stehende Geschichte von Informationsinfrastrukturen, auf der diese Vorschläge aufbauen. Um jenseits der grundlegenden Entwicklungen des Forschungsdatenmanagements und der Informationsinfrastrukturen auch konkrete Beispiele und Lösungsansätze für die Frage von Nachhaltigkeit zur Diskussion zu stellen, sollen die technischen Lösungen, die im Rahmen der digitalen Angebote des Deutschen Archäologischen Instituts, aber auch des DFG-Projektes IANUS (Forschungsdatenzentrum für die Langzeitsicherung archäologischer und altertumswissenschaftlicher Daten) vorgestellt werden. </p>
+      </body>
+   </text>
+</TEI>
