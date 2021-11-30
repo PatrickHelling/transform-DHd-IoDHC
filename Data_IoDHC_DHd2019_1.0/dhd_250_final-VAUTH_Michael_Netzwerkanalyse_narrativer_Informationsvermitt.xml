@@ -1,0 +1,795 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     xml:id="dhd_250_final-VAUTH_Michael_Netzwerkanalyse_narrativer_Informationsvermitt">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title xml:lang="de">Netzwerkanalyse narrativer Informationsvermittlung in Dramen</title>
+            <author>
+               <persName>
+                  <surname>Vauth</surname>
+                  <forename>Michael</forename>
+               </persName>
+               <affiliation>
+                  <orgName>
+                     <name type="main">Technische Universität Hamburg</name>
+                  </orgName>
+                  <country>Deutschland</country>
+               </affiliation>
+            </author>
+         </titleStmt>
+      </fileDesc>
+      <profileDesc>
+         <textClass>
+            <keywords n="category">
+               <term>Vortrag</term>
+            </keywords>
+            <keywords n="keywords">
+               <term>Netzwerkanalyse</term>
+               <term>Narrativität</term>
+               <term>Informationsvermittlung</term>
+               <term>Dramenanalyse</term>
+            </keywords>
+            <keywords n="topics">
+               <term>Annotieren</term>
+               <term>Netzwerkanalyse</term>
+               <term>Visualisierung</term>
+               <term>Literatur</term>
+            </keywords>
+         </textClass>
+      </profileDesc>
+   </teiHeader>
+   <text xml:lang="de">
+      <body>
+         <div type="div1" rend="DH-Heading1">
+            <head>Einleitung</head>
+            <p>In diesem Beitrag wird ein Verfahren vorgestellt, das Netzwerkvisualisierungen dramatischer Texte für eine spezifische Form der kommunikativen Interaktion zwischen Figuren fokussiert.</p>
+            <p>Es wird gezeigt, inwiefern gewichtete, gerichtete und dynamische Figurennetzwerke narrative Informationsvermittlung in der Figurenrede visualisieren können und auf diesem Weg dramennarratologische Analysen bzw. Annotationen ausgewertet werden.</p>
+            <p>Im Gegensatz zu literaturwissenschaftlichen Netzwerkanalysen, die um die automatisierte Analyse 
+                    <anchor id="CTVK001c34975d63a9649c1801b25117261594e"/>des „kompositorische[n] Grundgerüst[s]“ 
+                    
+                    <anchor id="CTVP0013e696cbed4264a08941bef752f5cc0fa"/>(Trilcke 2013: 224) von großen Dramenkorpora 
+                    
+                    <anchor id="CTVP001515aa8fbd74642b2b4cb7559a10308e7"/>(Piper et al 2017; Trilcke et al. 2015) bemüht sind, steht in diesem Beitrag also die Visualisierung von manuellen Annotationen im Vordergrund.
+                </p>
+            <p>Darüber hinaus werden mit Rückgriff auf die ermittelten Netzwerkdaten Deutungspotenziale exemplarisch an Kleists 
+                    <hi rend="italic">Die Familie Schroffenstein</hi> (DFS) diskutiert.<hi rend="superscript">1</hi> Das Erkenntnisinteresse zielt also auf zwei Aspekte: (1) Inwiefern lassen sich narrative Redebeiträge, die ein zentrales Element der inneren und äußeren Informationsvermittlung im Drama (Pfister 2001: 20-22) sind, durch Annotationen netzwerkgraphisch visualisieren? (2) Inwiefern stellt die literaturwissenschaftliche Netzwerkanalyse in diesem Kontext einen Mehrwert dar?
+                </p>
+         </div>
+         <div type="div1" rend="DH-Heading1">
+            <head>Annotation narrativer Figurenrede</head>
+            <p>Ausgangspunkt der vorgestellten Netzwerke ist eine Typologie narrativer Figurenrede bzw. von Binnenerzählungen, die zur Annotation der Dramen Heinrich von Kleists genutzt wurden.<hi rend="superscript">2</hi> Dabei wurden über 800 Vorkommnisse narrativer Figurenrede in den Dramen manuell annotiert. In einem ersten Schritt unterscheidet die Typologie zwischen narrativen Äußerungen, mit denen Figuren über ihre eigene Wirklichkeit erzählen, und narrativer Figurenrede, bei der das nicht der Fall ist. Der erste Phänomentyp, die horizontalen Binnenerzählungen, können mit dem narratologischen Kategorieninventar zur Beschreibung anachronen Erzählens (Lahn &amp; Meister 2008: 138-141) genauer beschrieben und annotiert werden:<hi rend="superscript">3</hi>
+            </p>
+            <table rend="rules">
+               <row>
+                  <cell rend="center" cols="3">Binnenerzählungen</cell>
+               </row>
+               <row>
+                  <cell rend="left">Horizontal</cell>
+                  <cell rend="left">Analepsen</cell>
+                  <cell rend="center">488</cell>
+               </row>
+               <row>
+                  <cell rend="left"/>
+                  <cell rend="left">Simullepsen</cell>
+                  <cell rend="center">123</cell>
+               </row>
+               <row>
+                  <cell rend="left"/>
+                  <cell rend="left">Prolepsen</cell>
+                  <cell rend="center">33</cell>
+               </row>
+               <row>
+                  <cell rend="left">Vertikal</cell>
+                  <cell rend="left">Pseudoanalepsen</cell>
+                  <cell rend="center">33</cell>
+               </row>
+               <row>
+                  <cell rend="left"/>
+                  <cell rend="left">Pseudosimullepsen</cell>
+                  <cell rend="center">6</cell>
+               </row>
+               <row>
+                  <cell rend="left"/>
+                  <cell rend="left">Pseudoprolepse</cell>
+                  <cell rend="center">29</cell>
+               </row>
+            </table>
+            <p>Tabelle 1: Vorkommen narrativer Figurenrede in Kleists Dramen</p>
+            <p>Diese manuellen Annotationen sind die Grundlage dafür, dass unterschiedliche Formen der Informationsvermittlung netzwerkgraphisch visualisiert werden können.</p>
+         </div>
+         <div type="div1" rend="DH-Heading1">
+            <head>Netzwerkerstellung</head>
+            <p>Unter Rückgriff auf die Annotationen der narrativen Figurenrede und die TEI-Annotationen von Sprecherfiguren und Szenen- sowie Aktwechseln im TextGrid-Korpus wurden chronologisierte Sender-Adressaten-Kanten erstellt. Dazu wurden die vier Sprecherfiguren, die auf eine narrative Äußerung folgen oder ihr vorangehen, als Adressaten berücksichtigt, sofern keine Akt- oder Szenenwechsel zwischen narrativer Figurenrede und potenziellem Adressaten liegt und es sich um unterschiedliche Figuren handelt. Die Anzahl der erzeugten Kanten ist somit deutlich höher als die Anzahl der narrativen Äußerungen (siehe exemplarisch in Tabelle 2 die Kanten 4 und 5 sowie 8-10). </p>
+            <table rend="rules">
+               <row>
+                  <cell rend="width: 7%">Id</cell>
+                  <cell rend="width: 22%">
+                     <hi rend="bold" style="font-size:8pt">Source (Sprecher)</hi>
+                  </cell>
+                  <cell rend="width: 22%">
+                     <hi rend="bold" style="font-size:8pt">Target (Adressat)</hi>
+                  </cell>
+                  <cell rend="width: 12%">
+                     <hi rend="bold" style="font-size:8pt">Label (Akt)</hi>
+                  </cell>
+                  <cell rend="width: 22%">
+                     <hi rend="bold" style="font-size:8pt">Timeset (Beginn &amp; Ende)</hi>
+                  </cell>
+                  <cell rend="width: 15%">
+                     <hi rend="bold" style="font-size:8pt">Weight</hi>
+                  </cell>
+               </row>
+               <row>
+                  <cell rend="center">1</cell>
+                  <cell rend="center">Rupert</cell>
+                  <cell rend="center">Eustache</cell>
+                  <cell rend="center">1</cell>
+                  <cell rend="center">
+                     <hi style="font-size:8pt">"&lt;[1.0,48.0]&gt;"</hi>
+                  </cell>
+                  <cell rend="center">1</cell>
+               </row>
+               <row>
+                  <cell rend="center">2</cell>
+                  <cell rend="center">Rupert</cell>
+                  <cell rend="center">Jeronimus</cell>
+                  <cell rend="center">1</cell>
+                  <cell rend="center">
+                     <hi style="font-size:8pt">"&lt;[2.0,48.0]&gt;"</hi>
+                  </cell>
+                  <cell rend="center">1</cell>
+               </row>
+               <row>
+                  <cell rend="center">3</cell>
+                  <cell rend="center">Rupert</cell>
+                  <cell rend="center">Ottokar</cell>
+                  <cell rend="center">1</cell>
+                  <cell rend="center">
+                     <hi style="font-size:8pt">"&lt;[3.0,48.0]&gt;"</hi>
+                  </cell>
+                  <cell rend="center">1</cell>
+               </row>
+               <row>
+                  <cell rend="center">4</cell>
+                  <cell rend="center">Jeronimus</cell>
+                  <cell rend="center">Ottokar</cell>
+                  <cell rend="center">1</cell>
+                  <cell rend="center">
+                     <hi style="font-size:8pt">"&lt;[4.0,48.0]&gt;"</hi>
+                  </cell>
+                  <cell rend="center">1</cell>
+               </row>
+               <row>
+                  <cell rend="center">5</cell>
+                  <cell rend="center">Jeronimus</cell>
+                  <cell rend="center">Ottokar</cell>
+                  <cell rend="center">1</cell>
+                  <cell rend="center">
+                     <hi style="font-size:8pt">"&lt;[5.0,48.0]&gt;"</hi>
+                  </cell>
+                  <cell rend="center">2</cell>
+               </row>
+               <row>
+                  <cell rend="center">6</cell>
+                  <cell rend="center">Ottokar</cell>
+                  <cell rend="center">Jeronimus</cell>
+                  <cell rend="center">1</cell>
+                  <cell rend="center">
+                     <hi style="font-size:8pt">"&lt;[6.0,48.0]&gt;"</hi>
+                  </cell>
+                  <cell rend="center">1</cell>
+               </row>
+               <row>
+                  <cell rend="center">7</cell>
+                  <cell rend="center">Jeronimus</cell>
+                  <cell rend="center">Kirchenvogt</cell>
+                  <cell rend="center">1</cell>
+                  <cell rend="center">
+                     <hi style="font-size:8pt">"&lt;[7.0,48.0]&gt;"</hi>
+                  </cell>
+                  <cell rend="center">1</cell>
+               </row>
+               <row>
+                  <cell rend="center">8</cell>
+                  <cell rend="center">Kirchenvogt</cell>
+                  <cell rend="center">Jeronimus</cell>
+                  <cell rend="center">1</cell>
+                  <cell rend="center">
+                     <hi style="font-size:8pt">"&lt;[8.0,48.0]&gt;"</hi>
+                  </cell>
+                  <cell rend="center">1</cell>
+               </row>
+               <row>
+                  <cell rend="center">9</cell>
+                  <cell rend="center">Kirchenvogt</cell>
+                  <cell rend="center">Jeronimus</cell>
+                  <cell rend="center">1</cell>
+                  <cell rend="center">
+                     <hi style="font-size:8pt">"&lt;[9.0,48.0]&gt;"</hi>
+                  </cell>
+                  <cell rend="center">2</cell>
+               </row>
+               <row>
+                  <cell rend="center">10</cell>
+                  <cell rend="center">Kirchenvogt</cell>
+                  <cell rend="center">Jeronimus</cell>
+                  <cell rend="center">1</cell>
+                  <cell rend="center">
+                     <hi style="font-size:8pt">"&lt;[10.0,48.0]&gt;"</hi>
+                  </cell>
+                  <cell rend="center">3</cell>
+               </row>
+            </table>
+            <p>Tabelle 2: Auszug aus der Kantenliste zu DFS</p>
+            <p>Das Kantengewicht 
+                (<hi rend="italic">Weight</hi>) zwischen einer Sender- und einer Adressatenfigur steigt mit jeder narrativen Äußerung, die eine Senderfigur im ‚Beisein‘ derselben Adressatenfigur äußert (siehe z.B. Kante 4 und 5). 
+                </p>
+            <p>Die Figurennetzwerke, die auf dieser Grundlage erstellt werden, illustrieren, welche Figuren sich zu welchem Zeitpunkt des Dramenverlaufs narrativ äußern, welche Figuren narrative Informationen bekommen und wie häufig Figuren an narrativem Informationsaustausch beteiligt sind.</p>
+         </div>
+         <div type="div1" rend="DH-Heading1">
+            <head>Visualisierungs- und Analysebeispiele</head>
+            <p>Abbildung 1 zeigt dieses Potential der Netzwerkvisualisierung exemplarisch für 
+                    <hi rend="italic">Die Familie Schroffenstein</hi>.<hi rend="superscript">4</hi>
+            </p>
+            <figure>
+               <graphic n="1001"
+                        width="10cm"
+                        height="6.757925cm"
+                        url="250_final-84992a02c805466ba1868ada56f591cc.png"
+                        rend="inline"/>
+               <head>
+                  <lb/>Abbildung 1.
+                        <hi style="font-size:10pt">Narrative Informationsvermittlung in DFS</hi>
+               </head>
+            </figure>
+            <p>Die Größe der Knotenbeschriftung repräsentiert hier die betweenness centrality<hi rend="superscript">5</hi> der Figuren und damit den Stellenwert bzw. Einfluss der Figur auf die narrative Informationsvermittlung innerhalb des Dramas.
+                </p>
+            <table rend="rules">
+               <row>
+                  <cell rend="center">Label</cell>
+                  <cell rend="center">
+                     <hi style="font-size:8pt">betweenness centrality</hi>
+                  </cell>
+                  <cell rend="center">
+                     <hi style="font-size:8pt">weighted indegree</hi>
+                  </cell>
+                  <cell rend="center">
+                     <hi style="font-size:8pt">weighted outdegree</hi>
+                  </cell>
+                  <cell rend="center">indegree</cell>
+                  <cell rend="center">outdegree</cell>
+                  <cell rend="center">degree</cell>
+               </row>
+               <row>
+                  <cell rend="center">Jeronimus</cell>
+                  <cell rend="center">125,45</cell>
+                  <cell rend="center">99</cell>
+                  <cell rend="center">82</cell>
+                  <cell rend="center">25</cell>
+                  <cell rend="center">28</cell>
+                  <cell rend="center">53</cell>
+               </row>
+               <row>
+                  <cell rend="center">Gertrude</cell>
+                  <cell rend="center">98,74</cell>
+                  <cell rend="center">46</cell>
+                  <cell rend="center">70</cell>
+                  <cell rend="center">15</cell>
+                  <cell rend="center">15</cell>
+                  <cell rend="center">30</cell>
+               </row>
+               <row>
+                  <cell rend="center">Sylvester</cell>
+                  <cell rend="center">85,37</cell>
+                  <cell rend="center">107</cell>
+                  <cell rend="center">31</cell>
+                  <cell rend="center">29</cell>
+                  <cell rend="center">14</cell>
+                  <cell rend="center">43</cell>
+               </row>
+               <row>
+                  <cell rend="center">Rupert</cell>
+                  <cell rend="center">74,47</cell>
+                  <cell rend="center">145</cell>
+                  <cell rend="center">17</cell>
+                  <cell rend="center">36</cell>
+                  <cell rend="center">10</cell>
+                  <cell rend="center">46</cell>
+               </row>
+               <row>
+                  <cell rend="center">Agnes</cell>
+                  <cell rend="center">45,90</cell>
+                  <cell rend="center">59</cell>
+                  <cell rend="center">85</cell>
+                  <cell rend="center">18</cell>
+                  <cell rend="center">23</cell>
+                  <cell rend="center">41</cell>
+               </row>
+               <row>
+                  <cell rend="center">Eustache</cell>
+                  <cell rend="center">17,25</cell>
+                  <cell rend="center">37</cell>
+                  <cell rend="center">73</cell>
+                  <cell rend="center">14</cell>
+                  <cell rend="center">19</cell>
+                  <cell rend="center">33</cell>
+               </row>
+               <row>
+                  <cell rend="center">Ottokar</cell>
+                  <cell rend="center">5,11</cell>
+                  <cell rend="center">180</cell>
+                  <cell rend="center">51</cell>
+                  <cell rend="center">33</cell>
+                  <cell rend="center">14</cell>
+                  <cell rend="center">47</cell>
+               </row>
+               <row>
+                  <cell rend="center">Ursula</cell>
+                  <cell rend="center">3,31</cell>
+                  <cell rend="center">1</cell>
+                  <cell rend="center">4</cell>
+                  <cell rend="center">1</cell>
+                  <cell rend="center">4</cell>
+                  <cell rend="center">5</cell>
+               </row>
+               <row>
+                  <cell rend="center">Santing</cell>
+                  <cell rend="center">2,94</cell>
+                  <cell rend="center">10</cell>
+                  <cell rend="center">49</cell>
+                  <cell rend="center">6</cell>
+                  <cell rend="center">12</cell>
+                  <cell rend="center">18</cell>
+               </row>
+               <row>
+                  <cell rend="center">Johann</cell>
+                  <cell rend="center">2,35</cell>
+                  <cell rend="center">4</cell>
+                  <cell rend="center">106</cell>
+                  <cell rend="center">3</cell>
+                  <cell rend="center">15</cell>
+                  <cell rend="center">18</cell>
+               </row>
+               <row>
+                  <cell rend="center">Kirchenvogt</cell>
+                  <cell rend="center">0,00</cell>
+                  <cell rend="center">1</cell>
+                  <cell rend="center">80</cell>
+                  <cell rend="center">1</cell>
+                  <cell rend="center">14</cell>
+                  <cell rend="center">15</cell>
+               </row>
+               <row>
+                  <cell rend="center">Ein Diener</cell>
+                  <cell rend="center">0,00</cell>
+                  <cell rend="center">2</cell>
+                  <cell rend="center">2</cell>
+                  <cell rend="center">2</cell>
+                  <cell rend="center">2</cell>
+                  <cell rend="center">4</cell>
+               </row>
+               <row>
+                  <cell rend="center">Sylvius</cell>
+                  <cell rend="center">0,00</cell>
+                  <cell rend="center">7</cell>
+                  <cell rend="center">3</cell>
+                  <cell rend="center">4</cell>
+                  <cell rend="center">2</cell>
+                  <cell rend="center">6</cell>
+               </row>
+               <row>
+                  <cell rend="center">Gärtner</cell>
+                  <cell rend="center">0,00</cell>
+                  <cell rend="center">2</cell>
+                  <cell rend="center">0</cell>
+                  <cell rend="center">2</cell>
+                  <cell rend="center">0</cell>
+                  <cell rend="center">2</cell>
+               </row>
+               <row>
+                  <cell rend="center">Aldöbern</cell>
+                  <cell rend="center">0,00</cell>
+                  <cell rend="center">1</cell>
+                  <cell rend="center">0</cell>
+                  <cell rend="center">1</cell>
+                  <cell rend="center">0</cell>
+                  <cell rend="center">1</cell>
+               </row>
+               <row>
+                  <cell rend="center">Theistiner</cell>
+                  <cell rend="center">0,00</cell>
+                  <cell rend="center">5</cell>
+                  <cell rend="center">15</cell>
+                  <cell rend="center">4</cell>
+                  <cell rend="center">5</cell>
+                  <cell rend="center">9</cell>
+               </row>
+               <row>
+                  <cell rend="center">Der Wanderer</cell>
+                  <cell rend="center">0,00</cell>
+                  <cell rend="center">0</cell>
+                  <cell rend="center">1</cell>
+                  <cell rend="center">0</cell>
+                  <cell rend="center">1</cell>
+                  <cell rend="center">1</cell>
+               </row>
+               <row>
+                  <cell rend="center">Zweiter Wanderer</cell>
+                  <cell rend="center">0,00</cell>
+                  <cell rend="center">0</cell>
+                  <cell rend="center">4</cell>
+                  <cell rend="center">0</cell>
+                  <cell rend="center">3</cell>
+                  <cell rend="center">3</cell>
+               </row>
+               <row>
+                  <cell rend="center">Die Kammerzofe</cell>
+                  <cell rend="center">0,00</cell>
+                  <cell rend="center">2</cell>
+                  <cell rend="center">13</cell>
+                  <cell rend="center">2</cell>
+                  <cell rend="center">6</cell>
+                  <cell rend="center">8</cell>
+               </row>
+               <row>
+                  <cell rend="center">Barnabe</cell>
+                  <cell rend="center">0,00</cell>
+                  <cell rend="center">1</cell>
+                  <cell rend="center">21</cell>
+                  <cell rend="center">1</cell>
+                  <cell rend="center">8</cell>
+                  <cell rend="center">9</cell>
+               </row>
+               <row>
+                  <cell rend="center">Ein Ritter</cell>
+                  <cell rend="center">0,00</cell>
+                  <cell rend="center">0</cell>
+                  <cell rend="center">2</cell>
+                  <cell rend="center">0</cell>
+                  <cell rend="center">2</cell>
+                  <cell rend="center">2</cell>
+               </row>
+            </table>
+            <p>Tabelle 3: Betweenness centrality, (weighted) in- und outdegree in DFS</p>
+            <p>Schon anhand dieses Beispiels und der netzwerkmetrischen Daten in Tabelle 3 lassen sich einige Vorzüge einer netzwerkgraphischen Annotationsauswertung zeigen:</p>
+            <list type="unordered">
+               <item>Die Reichweite einer Figurenerzählung wird im Hinblick auf den Adressatenkreis ermittelt.</item>
+               <item>Die narrativen Funktionen der Figuren werden durch ihre Netzwerkeigenschaften erkennbar:
+                        <list type="unordered">
+                     <item>
+                        <hi rend="italic">Brückenfiguren</hi>: hohe betweenness centrality; Verbindung getrennter Netzwerkbereiche 
+                                <anchor id="CTVP00159161bd827784838b23b88403c10e732"/>(Trilcke 2013: 217): z.B. Jeronimus (siehe hier und nachfolgend Tabelle 2).
+                            </item>
+                     <item>
+                        <hi rend="italic">Botenfiguren</hi>: Geringe betweenness centrality; mind. eine narrative Äußerung: 
+                                <list type="unordered">
+                           <item>
+                              <hi rend="italic">Botenfiguren i.e.S.</hi>, die 
+                                        <hi rend="italic">nach</hi> dem ersten Akt erzählend in Erscheinung treten: z.B. die Wanderer, der Ritter und Barnabe.
+                                    </item>
+                           <item>
+                              <hi rend="italic">Expositionsfiguren</hi>, die 
+                                        <hi rend="italic">im</hi> ersten Akt/Dramenteil erzählend in Erscheinung treten: z.B. der Kirchenvogt.<hi rend="superscript">6</hi>
+                           </item>
+                        </list>
+                     </item>
+                     <item>
+                        <hi rend="italic">Zielfiguren</hi>: hohe betweenness centrality; hoher gewichteter Eingangsgrad; geringer gewichteter Ausgangsgrad: z.B. Sylvester und Rupert, die häufig die Adressaten, aber selten die Sprecher narrativer Figurenrede sind. (Die Handlung des hier gewählten Beispieltexts legt die These nahe, dass diese Figuren entscheidungsmächtige Figuren sind und daher zahlreiche Informationen bekommen.)
+                            </item>
+                     <item>
+                        <hi rend="italic">Figuren der Informationskontrolle</hi>: hohe betweenness centrality; sehr hoher Ausgangsgrad; Netzwerke mit geringer Kantendichte: z.B. Hermann in Kleists 
+                                <hi rend="italic">Hermannsschlacht.</hi>
+                        <hi rend="superscript">7</hi>
+                     </item>
+                  </list>
+               </item>
+               <item>Es lassen sich Figurenpaare und Netzwerkbereiche identifizieren, zwischen denen es keinen oder nur vermittelten Informationsaustausch gibt. Hier sind natürlich Dyaden besonders interessant, bei denen die beiden Figuren eine hohe betweenness centrality aufweisen: z.B. Rupert und Sylvester.</item>
+               <item>Die Informationsstrukturen geben Aufschluss über den allgemeinen Grad der Informiertheit der Figuren: z.B. die Kantendichte.<hi rend="superscript">8</hi>
+               </item>
+            </list>
+            <p>Zudem können unterschiedliche Formen der narrativen Figurenrede netzwerkgraphisch miteinander verglichen werden. Die Abbildungen 3 und 4 zeigen dies exemplarisch. In Abbildung 3 werden Figurenerzählungen visualisiert, in denen sich Figuren in Übereinstimmung mit der fiktionalen Wirklichkeit äußern. Abbildung 4 zeigt narrative Äußerungen, bei denen das Gegenteil der Fall ist. Es handelt sich also um narrative Falschaussagen. Der Vergleich ist in diesem Fall aufgrund der vorhandenen Parallelen 
+                    <hi rend="italic">und</hi> Unterschiede aufschlussreich. Bei beiden Netzwerken behält Jeronimus die zentrale Position im Netzwerk. Hier schlägt sich nieder, dass er für die Verbreitung von wirklichkeitsgemäßen Informationen ebenso verantwortlich ist, wie für die Verbreitung von falschen Verdächtigungen, Lügen und Vorurteilen. Agnes‘ Netzwerkposition verändert sich hingegen stark (Abb. 4). Sie ist innerhalb ihrer Familie und in der kommunikativen Interaktion mit Ottokar die zentrale Figur bei der Weitergabe falscher Informationen.
+                </p>
+         </div>
+         <div type="div1" rend="DH-Heading1">
+            <head>Informationsvermittlung im Dramenverlauf: Dynamische Netzwerke</head>
+            <p>Wie 
+                    
+                    <anchor id="CTVP001e85fc92fd3074491bb255e2a866b93de"/>Agarwal et al. (2012: 94) gezeigt haben, hat die Erstellung von dynamischen Netzwerken den Vorteil, die Veränderlichkeit der netzwerkmetrischen Eigenschaften einer Figur, einer Figurengruppe oder eines gesamten Netzwerks im Verlauf eines Roman- oder Dramengeschehens berücksichtigen zu können. Das bestätigen die netzwerkmetrischen Auswertungen der 
+                    <hi rend="italic">Familie Schroffenstein</hi> in Abbildung 2. Hier wird der gewichtete Ausgangsgrad für vier ausgewählte Figuren aktweise dokumentiert. So tritt der Kirchenvogt narrativ nur im ersten Akt in Erscheinung, was seine Funktion als Expositionsfigur unterstreicht. Auch Barnabes Funktion als Vermittlerin von Anagnorisis-Informationen zum Dramenende spiegelt sich wider. Jeronimus Bedeutung relativiert sich, weil ersichtlich wird, dass er – aufgrund seiner Ermordung am Ende des dritten Akts – nur in den ersten drei Akten als informationsvermittelnde Figur auftritt. Seine hohen Werte in Akt zwei und drei zeigen jedoch, dass er für den Handlungsverlauf entscheidende Informationen äußert. Bei Rupert bestätigt sich seine geringe narrative Aktivität (Tabelle 3) als ein relativ konstantes Verhalten. Der niedrige gewichtete Ausgangsgrad für das gesamte Drama ist also nicht darauf zurückzuführen, dass er nur in wenigen Szenen (erzählerisch) in Erscheinung tritt. 
+                </p>
+            <figure>
+               <graphic n="1002"
+                        width="10.557494444444444cm"
+                        height="3.96875cm"
+                        url="250_final-f830a4a90f3e20c0ab31e0aa31bab22c.png"
+                        rend="inline"/>
+               <head>
+                  <lb/>Abbildung 2.
+                        <hi style="font-size:10pt">Gewichteter Ausgangsgrad im Dramenverlauf in DFS</hi>
+               </head>
+            </figure>
+         </div>
+         <div type="div1" rend="DH-Heading1">
+            <head>Schluss</head>
+            <p>Solange die automatische Annotation narrativer Figurenrede nicht möglich ist, setzt das vorgestellte Verfahren einen relativ großen Annotationsaufwand voraus. Es ermöglicht somit keinen umfassenden Vergleich von Dramen, was unter anderem zur Einordnung der vorgestellten quantitativen Netzwerkanalysen wünschenswert wäre.</p>
+            <p>In diesem Beitrag wurde jedoch exemplarisch gezeigt, inwiefern netzwerkgraphische Visualisierungen für die Auswertung narratologischer Annotationen einen analytischen Mehrwert haben können. Die formalen Annotationen können und sollen durch inhaltsbezogene Annotationen angereichert werden. Auf dieser Grundlage könnte netzwerkgraphisch der Informationsaustausch über bestimmte Themen oder Figuren visualisiert werden.</p>
+         </div>
+         <div type="div1" rend="DH-Heading1">
+            <head>Anhang</head>
+            <figure>
+               <graphic n="1003"
+                        width="10cm"
+                        height="6.505222222222222cm"
+                        url="250_final-c9c3673a9ab34a276ded6345de28d260.png"
+                        rend="inline"/>
+               <head>
+                  <lb/>Abbildung 3. Narrative Informationsvermittlung (Horizontale Binnenerzählungen/Wirklichkeitserzählungen) in DFS </head>
+            </figure>
+            <figure>
+               <graphic n="1004"
+                        width="10cm"
+                        height="4.142561111111111cm"
+                        url="250_final-4df126c5ca6722bb2ac24eeb8abeb9ad.png"
+                        rend="inline"/>
+               <head>
+                  <lb/> Abbildung 4.
+                        <hi style="font-size:10pt">Narrative Informationsvermittlung (Pseudoanalepsen/Falschaussagen) in DFS</hi>
+               </head>
+            </figure>
+            <table rend="rules">
+               <row>
+                  <cell rend="left">Label</cell>
+                  <cell rend="center">
+                     <hi rend="bold" style="font-size:7pt">betweenness centrality</hi>
+                  </cell>
+                  <cell rend="center">
+                     <hi rend="bold" style="font-size:7pt">weighted indegree</hi>
+                  </cell>
+                  <cell rend="center">
+                     <hi rend="bold" style="font-size:7pt">weighted outdegree</hi>
+                  </cell>
+                  <cell rend="center">indegree</cell>
+                  <cell rend="center">outdegree</cell>
+               </row>
+               <row>
+                  <cell rend="left">Hermann</cell>
+                  <cell rend="center">482,7</cell>
+                  <cell rend="center">66</cell>
+                  <cell rend="center">47</cell>
+                  <cell rend="center">36</cell>
+                  <cell rend="center">27</cell>
+               </row>
+               <row>
+                  <cell rend="left">Thuiskomar</cell>
+                  <cell rend="center">107,25</cell>
+                  <cell rend="center">5</cell>
+                  <cell rend="center">10</cell>
+                  <cell rend="center">5</cell>
+                  <cell rend="center">6</cell>
+               </row>
+               <row>
+                  <cell rend="left">Thusnelda</cell>
+                  <cell rend="center">69,62</cell>
+                  <cell rend="center">28</cell>
+                  <cell rend="center">25</cell>
+                  <cell rend="center">13</cell>
+                  <cell rend="center">9</cell>
+               </row>
+               <row>
+                  <cell rend="left">Ventidius</cell>
+                  <cell rend="center">61,95</cell>
+                  <cell rend="center">7</cell>
+                  <cell rend="center">27</cell>
+                  <cell rend="center">5</cell>
+                  <cell rend="center">14</cell>
+               </row>
+               <row>
+                  <cell rend="left">Varus</cell>
+                  <cell rend="center">57,8</cell>
+                  <cell rend="center">10</cell>
+                  <cell rend="center">9</cell>
+                  <cell rend="center">6</cell>
+                  <cell rend="center">8</cell>
+               </row>
+               <row>
+                  <cell rend="left">Dagobert</cell>
+                  <cell rend="center">27</cell>
+                  <cell rend="center">3</cell>
+                  <cell rend="center">3</cell>
+                  <cell rend="center">2</cell>
+                  <cell rend="center">3</cell>
+               </row>
+               <row>
+                  <cell rend="left">Zweite Hauptmann</cell>
+                  <cell rend="center">21</cell>
+                  <cell rend="center">2</cell>
+                  <cell rend="center">1</cell>
+                  <cell rend="center">2</cell>
+                  <cell rend="center">1</cell>
+               </row>
+               <row>
+                  <cell rend="left">Gertrud</cell>
+                  <cell rend="center">20</cell>
+                  <cell rend="center">7</cell>
+                  <cell rend="center">6</cell>
+                  <cell rend="center">4</cell>
+                  <cell rend="center">3</cell>
+               </row>
+               <row>
+                  <cell rend="left">Marbod</cell>
+                  <cell rend="center">16,2</cell>
+                  <cell rend="center">11</cell>
+                  <cell rend="center">5</cell>
+                  <cell rend="center">7</cell>
+                  <cell rend="center">4</cell>
+               </row>
+               <row>
+                  <cell rend="left">Wolf</cell>
+                  <cell rend="center">11,96</cell>
+                  <cell rend="center">5</cell>
+                  <cell rend="center">4</cell>
+                  <cell rend="center">5</cell>
+                  <cell rend="center">4</cell>
+               </row>
+               <row>
+                  <cell rend="left">Aristan</cell>
+                  <cell rend="center">8,5</cell>
+                  <cell rend="center">1</cell>
+                  <cell rend="center">5</cell>
+                  <cell rend="center">1</cell>
+                  <cell rend="center">4</cell>
+               </row>
+               <row>
+                  <cell rend="left">Rinold</cell>
+                  <cell rend="center">6</cell>
+                  <cell rend="center">1</cell>
+                  <cell rend="center">5</cell>
+                  <cell rend="center">1</cell>
+                  <cell rend="center">4</cell>
+               </row>
+               <row>
+                  <cell rend="left">Erste Cherusker</cell>
+                  <cell rend="center">6</cell>
+                  <cell rend="center">1</cell>
+                  <cell rend="center">5</cell>
+                  <cell rend="center">1</cell>
+                  <cell rend="center">4</cell>
+               </row>
+               <row>
+                  <cell rend="left">Der zweite Cherusker</cell>
+                  <cell rend="center">5,2</cell>
+                  <cell rend="center">1</cell>
+                  <cell rend="center">2</cell>
+                  <cell rend="center">1</cell>
+                  <cell rend="center">2</cell>
+               </row>
+               <row>
+                  <cell rend="left">Gueltar</cell>
+                  <cell rend="center">5</cell>
+                  <cell rend="center">1</cell>
+                  <cell rend="center">2</cell>
+                  <cell rend="center">1</cell>
+                  <cell rend="center">2</cell>
+               </row>
+               <row>
+                  <cell rend="left">Der Mann</cell>
+                  <cell rend="center">4</cell>
+                  <cell rend="center">1</cell>
+                  <cell rend="center">3</cell>
+                  <cell rend="center">1</cell>
+                  <cell rend="center">3</cell>
+               </row>
+               <row>
+                  <cell rend="left">Das Volk</cell>
+                  <cell rend="center">2</cell>
+                  <cell rend="center">2</cell>
+                  <cell rend="center">1</cell>
+                  <cell rend="center">2</cell>
+                  <cell rend="center">1</cell>
+               </row>
+               <row>
+                  <cell rend="left">Erste Älteste</cell>
+                  <cell rend="center">0,5</cell>
+                  <cell rend="center">1</cell>
+                  <cell rend="center">1</cell>
+                  <cell rend="center">1</cell>
+                  <cell rend="center">1</cell>
+               </row>
+               <row>
+                  <cell rend="left">Scäpio</cell>
+                  <cell rend="center">0,33</cell>
+                  <cell rend="center">1</cell>
+                  <cell rend="center">5</cell>
+                  <cell rend="center">1</cell>
+                  <cell rend="center">4</cell>
+               </row>
+            </table>
+            <p>Tabelle 4: Figuren mit höchster betweenness centrality in Kleist <hi rend="italic">Hermannsschlacht</hi>
+            </p>
+         </div>
+      </body>
+      <back>
+         <div type="notes">
+            <note place="foot" id="ftn1" n="1"> Textgrundlage der Annotationen war Kleists Werkausgabe von Siegfried Streller, die durch das TextGrid Repositorium digital zur Verfügung steht: https://textgrid.de/en/digitale-bibliothek.</note>
+            <note place="foot" id="ftn2" n="2"> Dazu wurde das Annotationstool CATMA (<anchor id="CTVP0015fda924871db4bb2a4e6c8700632949c"/>Meister et al. 2016) verwendet. CATMA bietet die Möglichkeit, mit selbstdefinierten literaturwissenschaftlichen Analysetaxonomien zu annotieren und ist damit für narratologische Forschungsprozesse besonders geeignet.</note>
+            <note place="foot" id="ftn3" n="3"> Grundlegend für die Annotation ist ein Narrativitätskonzept, das berücksichtigt, dass Texte aller Gattungen narrative Elemente enthalten können, wie es u.a. <anchor id="CTVP0019de1ee52689f4ac58fad8b15c7a5e771"/>Wolf (2002) beschreibt. Zu der narratologischen Terminologie vgl. Lahn/Meister 2016: 147-149.</note>
+            <note place="foot" id="ftn4" n="4"> Alle Visualisierungen und Netzwerkanalysen wurden mit dem Tool GEPHI (<anchor id="CTVP0018a161cdac0284f1faf20add3a9185657"/>Bastian et al. 2008) erstellt.</note>
+            <note place="foot" id="ftn5" n="5"> Mit der betweenness centrality wird gemessen, für wieviele Knotenpaare ein Knoten den kürzesten Netzwerkpfad darstellt. Eine hohe betweenness centrality in Netzwerken, die Informationsflüsse abbilden, indiziert also einen großen Einfluss der Figur auf die Informationsvermittlung im Netzwerk, da sie als Brückenfigur fungiert.</note>
+            <note place="foot" id="ftn6" n="6"> Vgl. zum Unterschied Pfister 2001: 280f.</note>
+            <note place="foot" id="ftn7" n="7"> Kantendichte der <hi rend="italic">Hermannsschlacht</hi>: 0,051; Kantendichte <hi rend="italic">Die Familie Schroffenstein</hi>: 0,388. Siehe zur <hi rend="italic">Hermannsschlacht</hi> Tabelle 4 im Anhang, in der sich Hermanns propagandistische „Überzeugungsarbeit“ (Müller-Salget 2009: 78) widerspiegelt.</note>
+            <note place="foot" id="ftn8" n="8"> Hier ist zu berücksichtigen, dass die Kantendichte natürlich auch durch andere Faktoren beeinflusst wird (<anchor id="CTVP001fd2cc480723d4c21bf7511853b10b364"/>Trilcke 2013: 225).</note>
+         </div>
+         <div type="bibliogr">
+            <listBibl>
+               <head>Bibliographie</head>
+               <bibl rend="Citavi Bibliography Entry">
+                  <anchor id="CTVL001a5e759d87a474e9f91b5d6e7d4c7473e"/>
+                  <hi rend="bold">Agarwal, A. / A. Corvalan / J. Jensen / O. Rambow (2012):</hi>
+                  <hi rend="italic">Social Network Analysis of Alice in Wonderland</hi>, 
+                        Proceedings of the Workshop on Computational Linguistics for Literature: 88–96.
+                    </bibl>
+               <bibl rend="Citavi Bibliography Entry">
+                  <anchor id="CTVL001ccc19c14e2d74e1b95dd04f2bedf2e60"/>
+                  <hi rend="bold">Bastian, M. / S. Heymann / M. Jacomy (2008):</hi>
+                  <hi rend="italic">Gephi: An open source sofware for exploring and manipulating networks.</hi> 
+                        AVI 2008 – Proceedings of the Working Conference on Advanced Visual Interfaces.
+                    </bibl>
+               <bibl rend="Citavi Bibliography Entry">
+                  <anchor id="CTVL0016e60d750ebfe4175adac8247308574aa"/>
+                  <hi rend="bold">Lahn, Silke/ J. C. Meister (2008):</hi>
+                  <hi rend="italic">Einführung in die Erzähltextanalyse</hi>. Stuttgart: Verlag J.B. Metzler.
+                    </bibl>
+               <bibl rend="Citavi Bibliography Entry">
+                  <hi rend="bold">Meister, J. C. / M. Petris / E. Gius / J. Jacke (2016): </hi>
+                  <hi rend="italic">CATMA 5.0. software for text annotation and analysis</hi>.
+                    </bibl>
+               <bibl rend="Citavi Bibliography Entry">
+                  <anchor id="CTVL001b0f8b0db9f4c48269104d8eeeaaa9799"/>
+                  <hi rend="bold">Moretti, F. (2011):</hi>
+                  <hi rend="italic">Network Theory, Plot Analysis.</hi> 
+                        Stanford Literary Lab Pamphlets 2.
+                    </bibl>
+               <bibl rend="Citavi Bibliography Entry">
+                  <anchor id="CTVL001cb8a3ea29b97484a945669f3a5619328"/>
+                  <hi rend="bold">Müller-Salget, Klaus (2009):</hi>
+                  <hi rend="italic">Die Herrmannsschlacht</hi>, 
+                        in: 
+                        <hi rend="bold">Ingo Breuer (Hg.):</hi>
+                  <hi rend="italic">Kleist-Handbuch. Leben – Werk – Wirkung</hi>. 
+                        Stuttgart: Verlag J.B. Metzler. S. 76-79.
+                    </bibl>
+               <bibl rend="Citavi Bibliography Entry">
+                  <hi rend="bold">Piper, Andrew / Mark Algee-Hewitt / Koustuv Sinha / Derek Ruths / Hardik Vala (2017):</hi>
+                  <hi rend="italic">Studying Literary Characters and Character Networks</hi>.
+                        Digital Humanities 2017, Conference Abstracts.
+                    </bibl>
+               <bibl rend="Citavi Bibliography Entry">
+                  <anchor id="CTVL0017fdf7ccb8ab1444fa639ead507dc3db0"/>
+                  <hi rend="bold">Pfister, Manfred (2001):</hi>
+                  <hi rend="italic">Das Drama</hi>. 
+                        München. Wilhelm Fink Verlag.
+                    </bibl>
+               <bibl rend="Citavi Bibliography Entry">
+                  <hi rend="bold">Trilcke, P. / F. Fischer / D. Kampkaspar (2015):</hi>
+                  <hi rend="italic">Digital Network Analysis of Dramatic Texts</hi>. 
+                        Digital Humanities 2015: Book of Abstracts.
+                    </bibl>
+               <bibl rend="Citavi Bibliography Entry">
+                  <anchor id="CTVL0016064b2b0e1934431b1f19b8d8696888f"/>
+                  <hi rend="bold">Trilcke, Peer (2013):</hi>
+                  <hi rend="italic">Social Network Analysis (SNA) als Methode einer textempirischen Literaturwissenschaft</hi>. 
+                        Empirie in der Literaturwissenschaft. Hrsg. von Christoph Rauen, Katja Mellmann und Philip Ajouri. Münster: 201–247.
+                    </bibl>
+               <bibl rend="Citavi Bibliography Entry">
+                  <anchor id="CTVL00197ceae22f4c241e8826aabb933a5c4cb"/>
+                  <hi rend="bold">Wolf, Werner (2002):</hi>
+                  <hi rend="italic">Das Problem der Narrativität in Literatur, bildender Kunst und Musik: Ein Beitrag zu einer intermedialen Erzähltheorie</hi>. 
+                        Erzähltheorie transgenerisch, intermedial, interdisziplinär. Hrsg. von Vera Nünning und Ansgar Nünning. Trier: 23–104.
+                    </bibl>
+            </listBibl>
+         </div>
+      </back>
+   </text>
+</TEI>
